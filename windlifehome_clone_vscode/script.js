@@ -25,7 +25,7 @@ const translations = {
     },
     hero: {
       location: "ILHA DO GUAJIRU — CEARÁ, BRASIL",
-      titleHtml: "EXPERIMENTE<br>EL <span>VIENTO.</span><br>SIENTA EL <span>OCÉANO.</span>",
+      titleHtml: "Vive el<br><span>Viento.</span><br>Siente el<br><span>Océano.</span>",
       description: "Wind Life Home es una escuela de kitesurf en el corazón de Guajiru. Habitaciones estilo rider a cuatro cuadras de uno de los mejores spots del Nordeste.",
       statsWind: "Días de viento<br>al año",
       statsRating: "Calificación<br>huéspedes",
