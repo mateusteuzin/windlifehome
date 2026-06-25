@@ -2886,4 +2886,441 @@ body.modal-open {
   }
 }
 
+/* =============================================
+   PREMIUM EXPERIENCE, ROOMS, GALLERY AND KITE MODALS
+   ============================================= */
+.premium-exp-tile,
+.experience-grid .exp-tile {
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  isolation: isolate;
+  border-radius: 10px;
+  box-shadow: 0 18px 44px rgba(0, 51, 102, 0.12);
+}
+
+.premium-exp-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 51, 102, 0.08), rgba(0, 28, 56, 0.78));
+  pointer-events: none;
+}
+
+.premium-exp-tile::after {
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 38%, rgba(0, 21, 42, 0.58));
+}
+
+.premium-exp-tile .exp-tile-label {
+  z-index: 3;
+  max-width: calc(100% - 32px);
+  line-height: 1.25;
+}
+
+@media (hover: hover) {
+  .premium-exp-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(0, 51, 102, 0.2);
+  }
+}
+
+.rooms-grid-featured {
+  width: min(100%, 1120px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.premium-room-card {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.premium-room-card .room-img-wrap {
+  height: 245px;
+}
+
+.premium-room-card .room-desc {
+  min-height: 74px;
+}
+
+.premium-room-card .room-footer {
+  gap: 14px;
+}
+
+.quartos-modal {
+  padding: 28px 16px;
+  align-items: center;
+}
+
+.quartos-modal-shell {
+  width: min(1180px, calc(100vw - 36px));
+  border-radius: 12px;
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.quartos-modal-body {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.premium-accommodation-card {
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 74, 141, 0.1);
+  box-shadow: 0 18px 46px rgba(0, 51, 102, 0.12);
+}
+
+.quarto-card__media {
+  position: relative;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: #003366;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.quarto-card__media img {
+  height: 250px;
+}
+
+.quarto-card__media span {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  background: rgba(255, 210, 0, 0.94);
+  color: #003366;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quarto-card__eyebrow {
+  color: var(--azul);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.room-gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 4px 0 18px;
+}
+
+.room-gallery-strip[hidden] {
+  display: none;
+}
+
+.room-gallery-strip button {
+  border: 0;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: #d9e4ef;
+  aspect-ratio: 1;
+}
+
+.room-gallery-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accommodation-whatsapp {
+  width: 100%;
+  justify-content: center;
+}
+
+.premium-lightbox,
+.kite-classes-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000002;
+  display: none;
+  background: rgba(0, 19, 38, 0.84);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.premium-lightbox.is-open,
+.kite-classes-modal.is-open {
+  display: flex;
+}
+
+.premium-lightbox {
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.premium-lightbox__figure {
+  margin: 0;
+  width: min(1040px, calc(100vw - 112px));
+  max-height: calc(100vh - 80px);
+}
+
+.premium-lightbox__image {
+  width: 100%;
+  max-height: calc(100vh - 134px);
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  background: #001326;
+}
+
+.premium-lightbox__caption {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
+.premium-lightbox__close,
+.premium-lightbox__nav,
+.kite-classes-modal__close {
+  border: 0;
+  background: #ffffff;
+  color: var(--azul);
+  cursor: pointer;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+}
+
+.premium-lightbox__close,
+.kite-classes-modal__close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 28px;
+}
+
+.premium-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 64px;
+  border-radius: 8px;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.premium-lightbox__prev { left: 22px; }
+.premium-lightbox__next { right: 22px; }
+
+.premium-kite-card {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.premium-kite-card .kite-img-wrap {
+  height: 235px;
+}
+
+.kite-classes-modal {
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  overflow-y: auto;
+}
+
+.kite-classes-modal__panel {
+  position: relative;
+  width: min(1080px, calc(100vw - 36px));
+  max-height: calc(100vh - 56px);
+  max-height: calc(100dvh - 56px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: clamp(24px, 4vw, 42px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+}
+
+.kite-classes-modal__header {
+  padding-right: 58px;
+  margin-bottom: 26px;
+}
+
+.kite-classes-modal__header h2 {
+  color: var(--azul);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 10px 0 12px;
+}
+
+.kite-classes-modal__header p {
+  color: #5a6a7a;
+  max-width: 720px;
+  line-height: 1.65;
+}
+
+.kite-classes-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.kite-price-card {
+  border: 1px solid rgba(0, 74, 141, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f6f9fc;
+}
+
+.kite-price-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.kite-price-card div {
+  padding: 20px;
+}
+
+.kite-price-card span {
+  color: var(--azul);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.kite-price-card h3 {
+  margin: 8px 0 12px;
+  color: #003366;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.kite-price-card strong {
+  display: block;
+  color: var(--azul);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.kite-price-card small {
+  display: block;
+  margin: 4px 0 14px;
+  color: #6a7a8a;
+  font-weight: 700;
+}
+
+.kite-price-card ul {
+  display: grid;
+  gap: 8px;
+  color: #526577;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.kite-price-card li::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--amarillo);
+}
+
+.kite-classes-modal__whatsapp {
+  margin-top: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 920px) {
+  .rooms-grid-featured,
+  .quartos-modal-body,
+  .kite-classes-modal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .premium-room-card .room-desc {
+    min-height: 0;
+  }
+
+  .premium-lightbox__figure {
+    width: calc(100vw - 36px);
+  }
+
+  .premium-lightbox__nav {
+    top: auto;
+    bottom: 24px;
+    transform: none;
+    height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 230px;
+  }
+
+  .exp-tile.tall {
+    grid-row: span 1;
+  }
+
+  .quartos-modal,
+  .kite-classes-modal {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .quartos-modal-shell,
+  .kite-classes-modal__panel {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    padding: 28px 16px 96px;
+  }
+
+  .quarto-card__media img,
+  .premium-room-card .room-img-wrap,
+  .premium-kite-card .kite-img-wrap,
+  .kite-price-card img {
+    height: 220px;
+  }
+
+  .room-footer,
+  .kite-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .room-cta,
+  .kite-book-btn {
+    width: 100%;
+  }
+
+  .premium-lightbox {
+    padding: 18px;
+  }
+
+  .premium-lightbox__close {
+    top: 14px;
+    right: 14px;
+  }
+}
+
 

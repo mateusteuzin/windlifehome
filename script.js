@@ -264,6 +264,245 @@ const translations = {
   }
 };
 
+function repairTextEncoding(value) {
+  if (typeof value !== "string") return value;
+  try {
+    return decodeURIComponent(escape(value));
+  } catch (error) {
+    return value;
+  }
+}
+
+function normalizeTextTree(value) {
+  if (Array.isArray(value)) return value.map(normalizeTextTree);
+  if (value && typeof value === "object") {
+    Object.keys(value).forEach((key) => {
+      value[key] = normalizeTextTree(value[key]);
+    });
+    return value;
+  }
+  return repairTextEncoding(value);
+}
+
+function mergeDeep(target, source) {
+  Object.keys(source).forEach((key) => {
+    if (source[key] && typeof source[key] === "object" && !Array.isArray(source[key])) {
+      if (!target[key] || typeof target[key] !== "object") target[key] = {};
+      mergeDeep(target[key], source[key]);
+    } else {
+      target[key] = source[key];
+    }
+  });
+  return target;
+}
+
+normalizeTextTree(translations);
+
+const translationOverrides = {
+  es: {
+    nav: { kite: "KITE CENTER" },
+    buttons: {
+      bookNow: "Reservar ahora",
+      reserveShort: "Reservar",
+      bookClass: "Ver clases",
+      ask: "Consultar",
+      viewGallery: "Ver galería",
+      availability: "Consultar disponibilidad"
+    },
+    booking: {
+      roomA: "Habitación para 2 personas",
+      roomB: "Habitación para 3 personas",
+      roomDesc: "Wi-Fi · Ventilador · Desayuno"
+    },
+    sections: {
+      stayTitle: "Habitaciones y alojamientos",
+      stayText: "Elige entre habitaciones para 2, 3 o 4 personas, todas con desayuno, Wi-Fi y ubicación cerca del kite point.",
+      kiteTitle: "Clases de Kite & Wing Foil",
+      kiteText: "Aulas de kitesurf y wing foil con instructores certificados, equipos cuidados y condiciones perfectas en Ilha do Guajiru."
+    },
+    rooms: {
+      roomA: "Habitación para 2 personas",
+      roomB: "Habitación para 3 personas",
+      roomC: "Habitación para 4 personas",
+      roomADesc: "Espacio íntimo para parejas o amigos, con baño en suite, ventilador, Wi-Fi y ropa de cama.",
+      roomBDesc: "Habitación cómoda para tríos, ideal para riders que viajan juntos y buscan practicidad cerca del spot.",
+      roomCDesc: "Alojamiento flexible para grupos pequeños, con camas confortables, lockers y ambiente rider.",
+      badgeA: "2 PERSONAS",
+      badgeB: "3 PERSONAS",
+      badgeC: "4 PERSONAS",
+      amenityBeds: "Capacidad correcta",
+      amenityLocker: "Locker",
+      amenityFan: "Ventilador",
+      amenityBreakfast: "Desayuno",
+      amenitySharedBath: "Baño",
+      amenitySpot: "Cerca del kite point",
+      perPersonNight: "por persona / noche"
+    },
+    kite: {
+      beginnerTitle: "Clases de Kitesurf",
+      beginnerDesc: "Clases por hora o paquete de 10 horas para aprender con seguridad en la laguna.",
+      beginnerInc1: "1 hora: R$ 240",
+      beginnerInc2: "Paquete 10 horas: R$ 2.300",
+      beginnerInc3: "Instructor certificado y equipo de seguridad",
+      beginnerInc4: "Ideal para principiantes e intermedios",
+      completeCourse: "1 hora",
+      intermediateTitle: "Clases de Wing Foil",
+      intermediateDesc: "Aprende wing foil con los mismos valores del kitesurf y acompañamiento personalizado.",
+      intermediateInc1: "1 hora: R$ 240",
+      intermediateInc2: "Paquete 10 horas: R$ 2.300",
+      intermediateInc3: "Entrenamiento progresivo según tu nivel",
+      intermediateInc4: "Condiciones perfectas en la laguna",
+      fourHours: "mismo valor que kite",
+      rentalTitle: "Rental de equipo completo",
+      rentalDesc: "Equipo completo listo para navegar: kite, barra, tabla y arnés.",
+      rentalInc1: "Kite + barra + tabla + arnés",
+      rentalInc2: "Revisión técnica antes del uso",
+      rentalInc3: "Orientación local del spot",
+      rentalInc4: "Reserva por WhatsApp",
+      fullGearDay: "equipo completo"
+    },
+    experience: {
+      label: "LA EXPERIENCIA",
+      titleHtml: "Imágenes reales,<br>momentos memorables.",
+      tileRooms: "Habitaciones",
+      tileCommon: "Área común",
+      tileSunsets: "Atardeceres",
+      tileBaths: "Baños",
+      tileKite: "Clases de Kite"
+    },
+    pricing: {
+      label: "TARIFARIO 2026",
+      text: "Precios en Reales Brasileños (BRL). Valores sujetos a disponibilidad y confirmación por WhatsApp.",
+      homeSub: "Habitaciones para 2, 3 y 4 personas · Desde R$ 85/noche",
+      roomA: "Habitación para 2 personas",
+      roomB: "Habitación para 3 personas",
+      roomC: "Habitación para 4 personas",
+      roomDetail: "Wi-Fi · Ventilador · Desayuno · Cerca del kite point",
+      packStay: "Pack 7 noches",
+      kiteSub: "Clases de Kite · Wing Foil · Rental",
+      privateClass: "Clase de Kite (1 hora)",
+      beginnerCourse: "Paquete Kite (10 horas)",
+      improvementCourse: "Clases de Wing Foil",
+      videoAnalysis: "Mismos valores que kitesurf",
+      fullGearRental: "Rental de equipo completo",
+      perDay: "",
+      kitePack: "Consulta Kite + Stay",
+      kitePackDetail: "Alojamiento + clases según disponibilidad",
+      kiteNote: "Wing Foil mantiene los mismos valores del kitesurf · Reserva anticipada recomendada"
+    },
+    whatsapp: {
+      classMessage: "Hola, quiero más información sobre las clases de kite/wing foil en Wind Life Home.",
+      roomsMessage: "Hola, quiero consultar disponibilidad para una habitación en Wind Life Home."
+    },
+    miniBar: {
+      fromHtml: "Desde <strong>R$ 85/noche</strong>",
+      bedsHtml: "Solo <strong>12 camas disponibles</strong>"
+    }
+  },
+  pt: {
+    buttons: {
+      bookNow: "Reservar agora",
+      reserveShort: "Reservar",
+      bookClass: "Ver aulas",
+      ask: "Consultar",
+      viewGallery: "Ver galeria",
+      availability: "Consultar disponibilidade"
+    },
+    sections: {
+      stayTitle: "Quartos e acomodações",
+      stayText: "Escolha entre quartos para 2, 3 ou 4 pessoas, todos com café da manhã, Wi-Fi e localização perto do kite point.",
+      kiteTitle: "Aulas de Kite & Wing Foil",
+      kiteText: "Aulas de kitesurf e wing foil com instrutores certificados, equipamentos cuidados e ótimas condições na Ilha do Guajiru."
+    },
+    rooms: {
+      roomA: "Quarto para 2 pessoas",
+      roomB: "Quarto para 3 pessoas",
+      roomC: "Quarto para 4 pessoas",
+      roomADesc: "Espaço íntimo para casais ou amigos, com banheiro em suíte, ventilador, Wi-Fi e roupa de cama.",
+      roomBDesc: "Quarto confortável para trios, ideal para riders que viajam juntos e querem praticidade perto do pico.",
+      roomCDesc: "Acomodação flexível para pequenos grupos, com camas confortáveis, lockers e clima rider.",
+      badgeA: "2 PESSOAS",
+      badgeB: "3 PESSOAS",
+      badgeC: "4 PESSOAS",
+      amenityBeds: "Capacidade correta",
+      amenitySharedBath: "Banheiro",
+      amenitySpot: "Perto do kite point"
+    },
+    pricing: {
+      label: "TARIFÁRIO 2026",
+      text: "Preços em Reais Brasileiros (BRL). Valores sujeitos à disponibilidade e confirmação por WhatsApp.",
+      homeSub: "Quartos para 2, 3 e 4 pessoas · Desde R$ 85/noite",
+      roomA: "Quarto para 2 pessoas",
+      roomB: "Quarto para 3 pessoas",
+      roomC: "Quarto para 4 pessoas",
+      roomDetail: "Wi-Fi · Ventilador · Café da manhã · Perto do kite point",
+      privateClass: "Aula de Kite (1 hora)",
+      beginnerCourse: "Pacote Kite (10 horas)",
+      improvementCourse: "Aulas de Wing Foil",
+      videoAnalysis: "Mesmos valores do kitesurf",
+      fullGearRental: "Aluguel de equipamento completo",
+      kiteNote: "Wing Foil mantém os mesmos valores do kitesurf · Reserva antecipada recomendada"
+    },
+    whatsapp: {
+      classMessage: "Olá, quero mais informações sobre as aulas de kite/wing foil na Wind Life Home.",
+      roomsMessage: "Olá, quero consultar disponibilidade para um quarto na Wind Life Home."
+    }
+  },
+  en: {
+    buttons: {
+      bookNow: "Book now",
+      reserveShort: "Book",
+      bookClass: "View classes",
+      ask: "Ask",
+      viewGallery: "View gallery",
+      availability: "Check availability"
+    },
+    sections: {
+      stayTitle: "Rooms and accommodation",
+      stayText: "Choose between rooms for 2, 3 or 4 people, all with breakfast, Wi-Fi and a location close to the kite point.",
+      kiteTitle: "Kite & Wing Foil Classes",
+      kiteText: "Kitesurf and wing foil lessons with certified instructors, well-kept gear and excellent conditions in Ilha do Guajiru."
+    },
+    rooms: {
+      roomA: "Room for 2 people",
+      roomB: "Room for 3 people",
+      roomC: "Room for 4 people",
+      roomADesc: "An intimate space for couples or friends, with ensuite bathroom, fan, Wi-Fi and bedding.",
+      roomBDesc: "A comfortable room for trios, ideal for riders traveling together near the spot.",
+      roomCDesc: "Flexible accommodation for small groups, with comfortable beds, lockers and a rider atmosphere.",
+      badgeA: "2 PEOPLE",
+      badgeB: "3 PEOPLE",
+      badgeC: "4 PEOPLE",
+      amenityBeds: "Correct capacity",
+      amenitySharedBath: "Bathroom",
+      amenitySpot: "Near the kite point"
+    },
+    pricing: {
+      label: "2026 RATES",
+      text: "Prices in Brazilian Reais (BRL). Values subject to availability and WhatsApp confirmation.",
+      homeSub: "Rooms for 2, 3 and 4 people · From R$ 85/night",
+      roomA: "Room for 2 people",
+      roomB: "Room for 3 people",
+      roomC: "Room for 4 people",
+      roomDetail: "Wi-Fi · Fan · Breakfast · Near the kite point",
+      privateClass: "Kite class (1 hour)",
+      beginnerCourse: "Kite package (10 hours)",
+      improvementCourse: "Wing Foil classes",
+      videoAnalysis: "Same prices as kitesurf",
+      fullGearRental: "Full gear rental",
+      kiteNote: "Wing Foil uses the same prices as kitesurf · Advance booking recommended"
+    },
+    whatsapp: {
+      classMessage: "Hello, I want more information about kite/wing foil classes at Wind Life Home.",
+      roomsMessage: "Hello, I want to check availability for a room at Wind Life Home."
+    }
+  }
+};
+
+Object.keys(translationOverrides).forEach((lang) => {
+  mergeDeep(translations[lang], translationOverrides[lang]);
+});
+
 const whatsappUrl = "https://wa.me/5588994911533";
 const whatsappAvailabilityUrl = `${whatsappUrl}?text=Ol%C3%A1%21%20Quero%20verificar%20disponibilidade%20de%20estadia%20na%20Wind%20Life%20Home.`;
 const whatsappRoomsUrl = `${whatsappUrl}?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20os%20quartos%20da%20Wind%20Life%20Home.`;
@@ -316,6 +555,8 @@ function applyLanguage(lang) {
     btn.classList.toggle("active", btn.dataset.lang === lang);
     btn.setAttribute("aria-pressed", String(btn.dataset.lang === lang));
   });
+
+  document.dispatchEvent(new CustomEvent("windlife:languagechange", { detail: { lang } }));
 }
 
 function setupLanguageSwitcher() {
@@ -460,6 +701,10 @@ function setupInteractions() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setupLanguageSwitcher();
+  initExperienceCards();
+  initRoomsModal();
+  initGalleryModal();
+  initKiteClassesModal();
   setupInteractions();
   initLocationMap();
 });
@@ -629,6 +874,7 @@ function legacyQuartosEscapeDisabled(event) {
 // (mantém o clique funcionando mesmo se houver elementos dentro do botão)
 
 (function () {
+  return;
   function initQuartosModalFinal() {
     const overlay = document.getElementById("quartos-modal-overlay");
     const modal = document.getElementById("quartos-modal");
@@ -723,5 +969,579 @@ function legacyQuartosEscapeDisabled(event) {
 })();
 
 
+const imgPath = (path) => encodeURI(`./${path}`);
 
+const galleryPhotos = {
+  home: [
+    "assets/img/wind/foto 1 frente wind life.jpeg",
+    "assets/img/wind/foto wind life 02.jpeg",
+    "assets/img/wind/foto wind life 03.jpeg",
+    "assets/img/wind/foto wind life 04.jpeg"
+  ],
+  kite: [
+    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.24.jpeg",
+    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.25 (2).jpeg",
+    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.24 (3).jpeg",
+    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.25.jpeg"
+  ],
+  sunsets: [
+    "assets/img/atardecer/por do sol foto 01.jpeg",
+    "assets/img/atardecer/por do sol foto 02.jpeg",
+    "assets/img/atardecer/por do sol foto 03.jpeg",
+    "assets/img/atardecer/por do sol foto 04.jpeg",
+    "assets/img/atardecer/por do sol foto 05.jpeg",
+    "assets/img/atardecer/por do sol foto 06.jpeg",
+    "assets/img/atardecer/por do sol foto 07.jpeg"
+  ],
+  common: [
+    "assets/img/zona chil/foto 01.jpeg",
+    "assets/img/zona chil/foto 02.jpeg",
+    "assets/img/zona chil/foto 03.jpeg",
+    "assets/img/zona chil/foto 04.jpeg",
+    "assets/img/zona chil/WhatsApp Image 2026-06-23 at 15.50.20 (1).jpeg",
+    "assets/img/zona chil/WhatsApp Image 2026-06-23 at 15.50.21 (2).jpeg"
+  ],
+  cocina: [
+    "assets/img/cocina/cocina foto 1.jpeg",
+    "assets/img/cocina/cocina foto 2.jpeg",
+    "assets/img/cocina/cocina foto 3.jpeg",
+    "assets/img/cocina/cocina foto 4.jpeg",
+    "assets/img/cocina/cocina foto 5.jpeg"
+  ],
+  taller: [
+    "assets/img/taller shop/WhatsApp Image 2026-06-23 at 15.50.20.jpeg",
+    "assets/img/taller shop/WhatsApp Image 2026-06-23 at 15.50.20 (1).jpeg",
+    "assets/img/taller shop/WhatsApp Image 2026-06-23 at 15.50.20 (2).jpeg",
+    "assets/img/taller shop/WhatsApp Image 2026-06-23 at 15.50.20 (3).jpeg"
+  ],
+  baths: [
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18.jpeg",
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18 (1).jpeg",
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg",
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19 (1).jpeg",
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.20.jpeg"
+  ]
+};
 
+const roomData = [
+  {
+    id: "room-2",
+    capacity: 2,
+    titleKey: "rooms.roomA",
+    descKey: "rooms.roomADesc",
+    badgeKey: "rooms.badgeA",
+    price: "R$ 85",
+    cover: "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
+    photos: [
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25.jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (1).jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (2).jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (3).jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (4).jpeg"
+    ],
+    amenities: ["Wi-Fi", "Baño en suite", "Ventilador", "Desayuno", "Cerca del kite point"]
+  },
+  {
+    id: "room-3",
+    capacity: 3,
+    titleKey: "rooms.roomB",
+    descKey: "rooms.roomBDesc",
+    badgeKey: "rooms.badgeB",
+    price: "R$ 85",
+    cover: "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.26.jpeg",
+    photos: [
+      "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.26.jpeg",
+      "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.27 (1).jpeg",
+      "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.27 (2).jpeg",
+      "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.27 (3).jpeg",
+      "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.27 (4).jpeg",
+      "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.27.jpeg"
+    ],
+    amenities: ["Wi-Fi", "Locker", "Ventilador", "Desayuno", "4 cuadras del spot"]
+  },
+  {
+    id: "room-4",
+    capacity: 4,
+    titleKey: "rooms.roomC",
+    descKey: "rooms.roomCDesc",
+    badgeKey: "rooms.badgeC",
+    price: "R$ 85",
+    cover: "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (2).jpeg",
+    photos: [
+      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (2).jpeg",
+      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
+      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (4).jpeg",
+      "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg"
+    ],
+    amenities: ["Wi-Fi", "Locker", "Ventilador", "Desayuno", "Baño"]
+  }
+];
+
+const kiteClasses = [
+  {
+    title: "Clases de Kitesurf",
+    label: "Kite",
+    price: "R$ 240",
+    period: "1 hora",
+    cover: "assets/img/atardecer/por do sol foto 03.jpeg",
+    bullets: ["Paquete 10 horas: R$ 2.300", "Instructor certificado", "Equipo de seguridad incluido"]
+  },
+  {
+    title: "Clases de Wing Foil",
+    label: "Wing Foil",
+    price: "R$ 240",
+    period: "1 hora",
+    cover: "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.25 (2).jpeg",
+    bullets: ["Mismos valores del kitesurf", "Paquete 10 horas: R$ 2.300", "Progresión personalizada"]
+  },
+  {
+    title: "Rental de equipo completo",
+    label: "Rental",
+    price: "R$ 500",
+    period: "equipo completo",
+    cover: "assets/img/atardecer/por do sol foto 06.jpeg",
+    bullets: ["Kite + barra + tabla + arnés", "Revisión técnica previa", "Reserva por WhatsApp"]
+  }
+];
+
+function currentLang() {
+  return localStorage.getItem("windlife_lang") || "es";
+}
+
+function t(key, lang = currentLang()) {
+  return getNestedTranslation(translations[lang] || translations.es, key) || getNestedTranslation(translations.es, key) || key;
+}
+
+function waLink(message) {
+  return `${whatsappUrl}?text=${encodeURIComponent(message)}`;
+}
+
+function setLazyImages(root = document) {
+  root.querySelectorAll("img").forEach((image) => {
+    if (!image.hasAttribute("loading") && !image.closest(".hero")) image.setAttribute("loading", "lazy");
+    if (!image.hasAttribute("decoding")) image.setAttribute("decoding", "async");
+  });
+}
+
+function renderFeaturedRooms() {
+  const grid = document.querySelector(".rooms-grid-featured");
+  if (!grid) return;
+
+  grid.innerHTML = roomData.map((room) => `
+    <article class="room-card premium-room-card" data-room-id="${room.id}" data-open-quartos>
+      <div class="room-card-badge"><span class="blue-tag">${t(room.badgeKey)}</span></div>
+      <div class="room-img-wrap">
+        <img alt="${t(room.titleKey)}" src="${imgPath(room.cover)}" loading="lazy" decoding="async">
+      </div>
+      <div class="room-body">
+        <div class="room-name">${t(room.titleKey)}</div>
+        <div class="room-desc">${t(room.descKey)}</div>
+        <div class="room-amenities">${room.amenities.map((item) => `<span class="amenity-tag">${item}</span>`).join("")}</div>
+      </div>
+      <div class="room-footer">
+        <div class="room-price">
+          <div class="room-price-amount">${room.price}</div>
+          <div class="room-price-per">${t("rooms.perPersonNight")}</div>
+        </div>
+        <button class="room-cta" type="button" data-open-quartos data-room-id="${room.id}">${t("buttons.availability")}</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderBookingOptions() {
+  const roomSelect = document.querySelector(".room-select-row");
+  if (!roomSelect) return;
+
+  roomSelect.innerHTML = roomData.map((room, index) => `
+    <label class="room-option ${index === 0 ? "selected" : ""}">
+      <input ${index === 0 ? "checked" : ""} name="room" type="radio">
+      <div class="room-option-info">
+        <div class="room-option-name">${t(room.titleKey)}</div>
+        <div class="room-option-desc">${t("pricing.roomDetail")}</div>
+      </div>
+      <div class="room-option-price">R$85<span>${t("booking.perNight")}</span></div>
+    </label>
+  `).join("");
+}
+
+function renderPricingTables() {
+  const cards = document.querySelectorAll(".pricing-card");
+  const homeCard = cards[0];
+  const kiteCard = cards[1];
+
+  if (homeCard) {
+    const sub = homeCard.querySelector(".pricing-card-title .sub");
+    const table = homeCard.querySelector(".pricing-table tbody");
+    const note = homeCard.querySelector(".pricing-note");
+    if (sub) sub.textContent = t("pricing.homeSub");
+    if (table) {
+      table.innerHTML = roomData.map((room) => `
+        <tr>
+          <td><div class="item">${t(room.titleKey)}</div><div class="detail">${t("pricing.roomDetail")}</div></td>
+          <td class="price"><span class="currency">R$</span> 85</td>
+        </tr>
+      `).join("") + `
+        <tr style="background:rgba(255,210,0,0.06);">
+          <td><div class="item">${t("pricing.packStay")}</div><div class="detail">${t("pricing.breakfastEveryDay")}</div></td>
+          <td class="price" style="color:var(--azul-dark);"><span class="currency">R$</span> 520</td>
+        </tr>
+      `;
+    }
+    if (note) note.textContent = t("pricing.homeNote");
+  }
+
+  if (kiteCard) {
+    const sub = kiteCard.querySelector(".pricing-card-title .sub");
+    const table = kiteCard.querySelector(".pricing-table tbody");
+    const note = kiteCard.querySelector(".pricing-note");
+    if (sub) sub.textContent = t("pricing.kiteSub");
+    if (table) {
+      table.innerHTML = `
+        <tr>
+          <td><div class="item">${t("pricing.privateClass")}</div><div class="detail">${t("pricing.ikoInstructor")}</div></td>
+          <td class="price"><span class="currency">R$</span> 240</td>
+        </tr>
+        <tr>
+          <td><div class="item">${t("pricing.beginnerCourse")}</div><div class="detail">${t("pricing.threeDaysGear")}</div></td>
+          <td class="price"><span class="currency">R$</span> 2.300</td>
+        </tr>
+        <tr>
+          <td><div class="item">${t("pricing.improvementCourse")}</div><div class="detail">${t("pricing.videoAnalysis")}</div></td>
+          <td class="price"><span class="currency">R$</span> 240</td>
+        </tr>
+        <tr>
+          <td><div class="item">${t("pricing.fullGearRental")}</div><div class="detail">${t("pricing.gearDetail")}</div></td>
+          <td class="price"><span class="currency">R$</span> 500</td>
+        </tr>
+        <tr style="background:rgba(255,210,0,0.06);">
+          <td><div class="item">${t("pricing.kitePack")}</div><div class="detail">${t("pricing.kitePackDetail")}</div></td>
+          <td class="price" style="color:var(--azul-dark);">WhatsApp</td>
+        </tr>
+      `;
+    }
+    if (note) note.textContent = t("pricing.kiteNote");
+  }
+}
+
+function initExperienceCards() {
+  const grid = document.getElementById("experience-grid");
+  if (!grid) return;
+
+  const cards = [
+    { id: "home", label: "Wind Life Home", image: galleryPhotos.home[0], tall: true },
+    { id: "rooms", label: t("experience.tileRooms"), image: roomData[0].cover, action: "rooms" },
+    { id: "taller", label: "Taller Shop", image: galleryPhotos.taller[0] },
+    { id: "common", label: t("experience.tileCommon"), image: galleryPhotos.common[0] },
+    { id: "cocina", label: currentLang() === "pt" ? "Cozinha" : currentLang() === "en" ? "Kitchen" : "Cocina", image: galleryPhotos.cocina[0] },
+    { id: "sunsets", label: t("experience.tileSunsets"), image: galleryPhotos.sunsets[0] },
+    { id: "baths", label: t("experience.tileBaths"), image: galleryPhotos.baths[0] }
+  ];
+
+  grid.innerHTML = cards.map((card) => {
+    const attrs = card.action === "rooms"
+      ? 'data-open-quartos aria-haspopup="dialog" aria-controls="quartos-modal"'
+      : card.action === "kite"
+        ? 'data-open-kite aria-haspopup="dialog"'
+        : `data-open-gallery="${card.id}"`;
+    return `
+      <button class="exp-tile premium-exp-tile ${card.tall ? "tall" : ""}" type="button" ${attrs}>
+        <img alt="${card.label}" src="${imgPath(card.image)}" loading="lazy" decoding="async">
+        <span class="exp-tile-label">${card.label}</span>
+      </button>
+    `;
+  }).join("");
+
+  setLazyImages(grid);
+}
+
+function initRoomsModal() {
+  const overlay = document.getElementById("quartos-modal-overlay");
+  const modal = document.getElementById("quartos-modal");
+  const close = document.getElementById("quartos-modal-close");
+  const body = document.getElementById("quartos-modal-body");
+  const title = document.getElementById("quartos-modal-title");
+  const kicker = modal?.querySelector(".quartos-modal-kicker");
+  const subtitle = modal?.querySelector(".quartos-modal-subtitle");
+
+  renderFeaturedRooms();
+  renderBookingOptions();
+  renderPricingTables();
+  setLazyImages();
+
+  if (!overlay || !modal || !close || !body || modal.dataset.ready === "true") return;
+  modal.dataset.ready = "true";
+
+  function renderCards(selectedId = "room-2") {
+    const lang = currentLang();
+    if (kicker) kicker.textContent = lang === "pt" ? "Quartos" : lang === "en" ? "Rooms" : "Habitaciones";
+    if (title) title.textContent = lang === "pt" ? "Quartos e acomodações" : lang === "en" ? "Rooms and accommodation" : "Habitaciones y alojamientos";
+    if (subtitle) subtitle.textContent = lang === "pt"
+      ? "Escolha o espaço ideal para sua estadia na Ilha do Guajiru."
+      : lang === "en"
+        ? "Choose the ideal space for your stay in Ilha do Guajiru."
+        : "Elige el espacio ideal para tu estadía en Ilha do Guajiru.";
+
+    body.innerHTML = roomData.map((room) => {
+      const isOpen = room.id === selectedId;
+      const message = `${t("whatsapp.roomsMessage")} ${t(room.titleKey)}.`;
+      return `
+        <article class="quarto-card premium-accommodation-card ${isOpen ? "is-expanded" : ""}" data-room-id="${room.id}">
+          <button class="quarto-card__media" type="button" data-toggle-room="${room.id}">
+            <img src="${imgPath(room.cover)}" alt="${t(room.titleKey)}" loading="lazy" decoding="async">
+            <span>${t("buttons.viewGallery")}</span>
+          </button>
+          <div class="quarto-card__body">
+            <div class="quarto-card__eyebrow">${room.capacity} ${lang === "en" ? "people" : "personas"}</div>
+            <h3>${t(room.titleKey)}</h3>
+            <p>${t(room.descKey)}</p>
+            <div class="quarto-card__tags">${room.amenities.map((item) => `<span>${item}</span>`).join("")}</div>
+            <div class="room-gallery-strip" ${isOpen ? "" : "hidden"}>
+              ${room.photos.map((photo, index) => `
+                <button type="button" data-lightbox-group="room-${room.id}" data-lightbox-index="${index}">
+                  <img src="${imgPath(photo)}" alt="${t(room.titleKey)} ${index + 1}" loading="lazy" decoding="async">
+                </button>
+              `).join("")}
+            </div>
+            <a class="btn-primary accommodation-whatsapp" href="${waLink(message)}" target="_blank" rel="noopener noreferrer">
+              ${t("buttons.availability")}
+            </a>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    setLazyImages(body);
+  }
+
+  function openModal(selectedId) {
+    renderCards(selectedId);
+    overlay.classList.add("is-open");
+    modal.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    close.focus({ preventScroll: true });
+  }
+
+  function closeModal() {
+    overlay.classList.remove("is-open");
+    modal.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-open-quartos]");
+    if (!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    openModal(trigger.dataset.roomId || "room-2");
+  }, true);
+
+  body.addEventListener("click", (event) => {
+    const roomTrigger = event.target.closest("[data-toggle-room]");
+    if (roomTrigger) {
+      renderCards(roomTrigger.dataset.toggleRoom);
+      return;
+    }
+
+    const lightboxTrigger = event.target.closest("[data-lightbox-group]");
+    if (lightboxTrigger) {
+      const room = roomData.find((item) => `room-${item.id}` === lightboxTrigger.dataset.lightboxGroup);
+      if (room) openLightbox(room.photos, Number(lightboxTrigger.dataset.lightboxIndex), t(room.titleKey));
+    }
+  });
+
+  close.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+  document.addEventListener("windlife:languagechange", () => {
+    renderFeaturedRooms();
+    renderBookingOptions();
+    renderPricingTables();
+    if (modal.classList.contains("is-open")) renderCards("room-2");
+  });
+}
+
+function openLightbox(photos, startIndex = 0, label = "") {
+  const lightbox = document.getElementById("premium-lightbox");
+  if (!lightbox) return;
+
+  const image = lightbox.querySelector(".premium-lightbox__image");
+  const caption = lightbox.querySelector(".premium-lightbox__caption");
+  const index = (startIndex + photos.length) % photos.length;
+  image.src = imgPath(photos[index]);
+  image.alt = `${label} ${index + 1}`;
+  caption.textContent = `${label} · ${index + 1}/${photos.length}`;
+  lightbox.dataset.photos = JSON.stringify(photos);
+  lightbox.dataset.label = label;
+  lightbox.dataset.index = String(index);
+  lightbox.classList.add("is-open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("premium-lightbox");
+  if (!lightbox) return;
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+function initGalleryModal() {
+  if (!document.getElementById("premium-lightbox")) {
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="premium-lightbox" id="premium-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="premium-lightbox__close" type="button" aria-label="Cerrar">&times;</button>
+        <button class="premium-lightbox__nav premium-lightbox__prev" type="button" aria-label="Anterior">‹</button>
+        <figure class="premium-lightbox__figure">
+          <img class="premium-lightbox__image" alt="">
+          <figcaption class="premium-lightbox__caption"></figcaption>
+        </figure>
+        <button class="premium-lightbox__nav premium-lightbox__next" type="button" aria-label="Siguiente">›</button>
+      </div>
+    `);
+  }
+
+  const lightbox = document.getElementById("premium-lightbox");
+  const move = (delta) => {
+    const photos = JSON.parse(lightbox.dataset.photos || "[]");
+    if (!photos.length) return;
+    openLightbox(photos, Number(lightbox.dataset.index || "0") + delta, lightbox.dataset.label || "");
+  };
+
+  document.addEventListener("click", (event) => {
+    const galleryTrigger = event.target.closest("[data-open-gallery]");
+    if (galleryTrigger) {
+      const id = galleryTrigger.dataset.openGallery;
+      openLightbox(galleryPhotos[id] || galleryPhotos.home, 0, galleryTrigger.textContent.trim());
+      return;
+    }
+    if (event.target.closest(".premium-lightbox__close")) closeLightbox();
+    if (event.target.closest(".premium-lightbox__prev")) move(-1);
+    if (event.target.closest(".premium-lightbox__next")) move(1);
+    if (event.target.id === "premium-lightbox") closeLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("is-open")) return;
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") move(-1);
+    if (event.key === "ArrowRight") move(1);
+  });
+}
+
+function renderKiteCards() {
+  const grid = document.querySelector(".kite-grid");
+  if (!grid) return;
+
+  grid.innerHTML = kiteClasses.map((item) => `
+    <article class="kite-card premium-kite-card" data-open-kite>
+      <div class="kite-img-wrap">
+        <img alt="${item.title}" src="${imgPath(item.cover)}" loading="lazy" decoding="async">
+        <span class="kite-difficulty">${item.label}</span>
+      </div>
+      <div class="kite-body">
+        <div class="kite-name">${item.title}</div>
+        <div class="kite-desc">${item.bullets[0]}</div>
+        <div class="kite-includes">${item.bullets.map((bullet) => `<span class="kite-include-item">${bullet}</span>`).join("")}</div>
+      </div>
+      <div class="kite-footer">
+        <div class="kite-price">
+          <div class="amount">${item.price}</div>
+          <div class="per">${item.period}</div>
+        </div>
+        <button class="kite-book-btn" type="button" data-open-kite>${t("buttons.bookClass")}</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function initKiteClassesModal() {
+  renderKiteCards();
+
+  if (!document.getElementById("kite-classes-modal")) {
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="kite-classes-modal" id="kite-classes-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="kite-classes-modal__panel">
+          <button class="kite-classes-modal__close" type="button" aria-label="Cerrar">&times;</button>
+          <header class="kite-classes-modal__header">
+            <span class="section-label">Wind Life Kite Center</span>
+            <h2>Clases de Kite & Wing Foil</h2>
+            <p>Precios claros, equipos cuidados y atención personalizada para reservar tu sesión en Ilha do Guajiru.</p>
+          </header>
+          <div class="kite-classes-modal__grid"></div>
+          <a class="btn-primary kite-classes-modal__whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    `);
+  }
+
+  const modal = document.getElementById("kite-classes-modal");
+  const grid = modal.querySelector(".kite-classes-modal__grid");
+  const close = modal.querySelector(".kite-classes-modal__close");
+  const whatsapp = modal.querySelector(".kite-classes-modal__whatsapp");
+
+  function renderModal() {
+    const title = modal.querySelector("h2");
+    const text = modal.querySelector("p");
+    if (title) title.textContent = t("sections.kiteTitle");
+    if (text) text.textContent = t("sections.kiteText");
+    grid.innerHTML = kiteClasses.map((item) => `
+      <article class="kite-price-card">
+        <img src="${imgPath(item.cover)}" alt="${item.title}" loading="lazy" decoding="async">
+        <div>
+          <span>${item.label}</span>
+          <h3>${item.title}</h3>
+          <strong>${item.price}</strong>
+          <small>${item.period}</small>
+          <ul>${item.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}</ul>
+        </div>
+      </article>
+    `).join("");
+    whatsapp.href = waLink(t("whatsapp.classMessage"));
+  }
+
+  function openModal() {
+    renderModal();
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    close.focus({ preventScroll: true });
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-open-kite], .kite-card");
+    if (!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    openModal();
+  }, true);
+
+  close.addEventListener("click", closeModal);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+  document.addEventListener("windlife:languagechange", () => {
+    initExperienceCards();
+    renderKiteCards();
+    if (modal.classList.contains("is-open")) renderModal();
+  });
+}
