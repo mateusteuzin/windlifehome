@@ -105,7 +105,7 @@ Vive el<br/><span>Viento.</span><br/>Siente el<br/><span>Océano.</span>
 <div class="booking-tabs">
 <button class="booking-tab active" type="button" onclick="switchTab(this,'home-section')" data-i18n="booking.stay">ALOJAMIENTO</button>
 <button class="booking-tab" type="button" onclick="switchTab(this,'kite')" data-i18n="booking.kiteStay">KITE + STAY</button>
-<button class="booking-tab" type="button" onclick="switchTab(this,'clase')" data-i18n="booking.classesOnly">SOLO CLASES</button>
+
 </div>
 <div class="booking-form">
 <div class="form-row-2">
@@ -143,9 +143,16 @@ Vive el<br/><span>Viento.</span><br/>Siente el<br/><span>Océano.</span>
 </div>
 <div class="guest-box">
 <span class="guest-box-label" data-i18n="booking.nights">Noches</span>
-<div class="guest-counter">
-<span class="guest-num" style="font-size:1.2rem;">7</span>
+<div class="guest-counter" aria-live="polite">
+  <button class="guest-btn guest-btn--nights" type="button" data-nights-minus aria-label="Diminuir noites">−</button>
+  <span class="guest-num guest-num--nights" data-nights-display style="font-size:1.2rem;">7</span>
+  <button class="guest-btn guest-btn--nights" type="button" data-nights-plus aria-label="Aumentar noites">+</button>
 </div>
+</div>
+
+
+<div style="display:none;">
+  <input id="booking-nights-hidden" type="hidden" value="7" />
 </div>
 </div>
 <label class="form-label" data-i18n="booking.roomType">Tipo de Habitación</label>
