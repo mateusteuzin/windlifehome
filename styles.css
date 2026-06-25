@@ -1620,15 +1620,33 @@ a[data-icon="whatsapp"] .ui-icon {
 .footer-tagline { font-size: 0.83rem; line-height: 1.65; margin-bottom: 22px; }
 .footer-social { display: flex; gap: 10px; }
 .social-btn {
-  width: 36px; height: 36px;
+  min-width: 42px; height: 36px;
+  padding: 0 10px;
   border-radius: 8px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
   cursor: pointer; transition: var(--transition);
 }
-.social-btn:hover { background: var(--amarillo); border-color: var(--amarillo); }
+.social-btn:hover { background: var(--amarillo); border-color: var(--amarillo); color: var(--azul-dark); }
+.social-label { line-height: 1; }
+
+.social-ico {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
 
 .footer-col-title {
   font-size: 0.75rem;
@@ -1662,6 +1680,29 @@ a[data-icon="whatsapp"] .ui-icon {
   color: rgba(255,255,255,0.35);
 }
 .footer-bottom a { color: var(--amarillo); }
+.backfire-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.backfire-credit-text {
+  color: rgba(245,245,245,0.5);
+  font-size: 13px;
+  font-weight: 400;
+}
+.backfire-credit-logo {
+  height: 20px;
+  width: auto;
+}
+.backfire-credit-link {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-bottom .backfire-credit-link { color: inherit; }
+.backfire-orange { color: #FF6600; }
+.backfire-white { color: #FFFFFF; }
 
 /* =============================================
    SCROLL ANIMATIONS
@@ -3322,5 +3363,4 @@ body.modal-open {
     right: 14px;
   }
 }
-
 
