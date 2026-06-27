@@ -75,6 +75,7 @@ ul { list-style: none; }
 .icon-thermometer { --icon: url('./assets/icons/thermometer.svg'); }
 .icon-message { --icon: url('./assets/icons/message.svg'); }
 .icon-whatsapp { --icon: url('./assets/icons/whatsapp.svg'); }
+.icon-instagram { --icon: url('./assets/icons/instagram.svg'); }
 .icon-camera { --icon: url('./assets/icons/camera.svg'); }
 .icon-users { --icon: url('./assets/icons/users.svg'); }
 .icon-play { --icon: url('./assets/icons/play.svg'); }
@@ -1113,6 +1114,14 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
   padding: 4px 12px;
   border-radius: 4px;
 }
+.kite-difficulty-warning {
+  background: #f6b73c;
+  color: var(--gris);
+}
+.kite-difficulty-success {
+  background: #2fbf71;
+  color: var(--blanco);
+}
 .kite-body { padding: 24px; }
 .kite-name { font-size: 1rem; font-weight: 800; color: var(--blanco); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
 .kite-desc { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.55; margin-bottom: 16px; }
@@ -1166,8 +1175,216 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate
   cursor: pointer;
   font-family: var(--font-main);
   transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 .kite-book-btn:hover { background: #e6bd00; }
+
+.downwind-section {
+  background: var(--azul);
+  overflow: hidden;
+  position: relative;
+}
+.downwind-section .section-header .display-lg {
+  color: var(--blanco);
+  text-transform: uppercase;
+}
+.downwind-section .section-header .body-lg {
+  color: rgba(255,255,255,0.72);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.downwind-section .section-header .yellow-bar {
+  background: var(--amarillo);
+}
+.downwind-panels {
+  display: grid;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+.downwind-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  min-height: 430px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0a1628;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+}
+.downwind-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(28px, 4vw, 48px);
+}
+.downwind-level {
+  border-radius: 999px;
+  color: var(--gris);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 7px 11px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.downwind-level--warning {
+  background: #f6b73c;
+}
+.downwind-level--success {
+  background: #2fbf71;
+  color: var(--blanco);
+}
+.downwind-title {
+  color: var(--blanco);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.2vw, 4.15rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.06;
+  margin: 0;
+  max-width: 620px;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  word-break: normal;
+}
+.downwind-arrow {
+  color: var(--amarillo);
+  font-weight: 700;
+}
+.downwind-route {
+  width: min(500px, 100%);
+  margin: 28px 0 22px;
+  position: relative;
+}
+.downwind-route-metric {
+  display: table;
+  margin: 0 auto 9px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--amarillo);
+  color: var(--azul);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.downwind-route-line {
+  display: grid;
+  grid-template-columns: 12px 1fr 12px;
+  align-items: center;
+  gap: 10px;
+}
+.downwind-route-line span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--amarillo);
+  box-shadow: 0 0 0 5px rgba(255,210,0,0.14);
+}
+.downwind-route-line i {
+  display: block;
+  height: 1px;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.9) 45%, rgba(255,255,255,0) 0);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 12px 1px;
+}
+.downwind-route-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 11px;
+  color: rgba(255,255,255,0.82);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.downwind-route-labels span:last-child {
+  text-align: right;
+}
+.downwind-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: clamp(0.92rem, 1.45vw, 1rem);
+  line-height: 1.58;
+  max-width: 520px;
+  margin: 0 0 28px;
+}
+.downwind-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,210,0,0.72);
+  background: transparent;
+  color: var(--blanco);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 240ms ease, border-color 240ms ease, transform 240ms ease;
+}
+.downwind-cta:hover {
+  background: rgba(255,210,0,0.1);
+  border-color: var(--amarillo);
+  transform: translateY(-1px);
+}
+.downwind-cta .ui-icon {
+  width: 17px;
+  height: 17px;
+  background-color: currentColor;
+}
+.downwind-photo {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.downwind-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.downwind-instagram {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(4,14,28,0.62);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blanco);
+  transition: background 220ms ease, transform 220ms ease;
+}
+.downwind-instagram:hover {
+  background: rgba(4,14,28,0.82);
+  transform: translateY(-1px);
+}
+.downwind-instagram .ui-icon {
+  width: 19px;
+  height: 19px;
+  background-color: currentColor;
+}
 
 /* =============================================
    EXPERIENCE / GALLERY STRIP
@@ -2318,6 +2535,48 @@ body.modal-open {
     margin-bottom: 38px;
   }
 
+  .downwind-card {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 0;
+  }
+
+  .downwind-content {
+    padding: 28px 20px 32px;
+  }
+
+  .downwind-title {
+    font-size: clamp(2rem, 10.5vw, 3rem);
+    line-height: 1.14;
+    max-width: 100%;
+  }
+
+  .downwind-route {
+    margin: 26px 0 18px;
+    width: 100%;
+  }
+
+  .downwind-route-labels {
+    font-size: 0.64rem;
+    gap: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .downwind-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .downwind-photo {
+    min-height: 220px;
+  }
+
+  .downwind-photo img {
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+  }
+
   .hero-content {
     padding: 96px 0 86px;
   }
@@ -3391,4 +3650,3 @@ body.modal-open {
     right: 14px;
   }
 }
-

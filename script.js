@@ -300,7 +300,7 @@ normalizeTextTree(translations);
 
 const translationOverrides = {
   es: {
-    nav: { kite: "KITE CENTER" },
+    nav: { kite: "KITE CENTER", downwind: "DOWNWIND" },
     buttons: {
       bookNow: "Reservar ahora",
       reserveShort: "Reservar",
@@ -319,6 +319,37 @@ const translationOverrides = {
       stayText: "Elige entre habitaciones para 2, 3 o 4 personas, todas con desayuno, Wi-Fi y ubicación cerca del kite point.",
       kiteTitle: "Clases de Kite & Wing Foil",
       kiteText: "Aulas de kitesurf y wing foil con instructores certificados, equipos cuidados y condiciones perfectas en Ilha do Guajiru."
+    },
+    downwind: {
+      title: "Paseos Downwind",
+      text: "Rutas guiadas para descubrir la laguna, el río y el mar abierto con apoyo local de Wind Life.",
+      eyebrow: "RUTA GUIADA · WIND LIFE",
+      cta: "Consultar por WhatsApp",
+      routeType: "Ruta guiada",
+      confirm: "sujeto a condiciones",
+      distanceAlmofala: "Distancia: 10–12 km",
+      durationAlmofala: "Duración: 4–5 horas",
+      distanceAconchego: "Distancia: ~5 km",
+      durationAconchego: "Duración: ~1 hora",
+      almofala: {
+        title: "Ilha do Guajiru → Almofala",
+        level: "INTERMEDIO",
+        metric: "11 KM · 4H30",
+        start: "Ilha do Guajiru",
+        end: "Almofala",
+        desc: "El downwind más popular de la región. Arranca en agua plana de río, sigue por laguna y termina en tramo de mar abierto hasta las pousadas de Guajiru. Recomendado para riders con experiencia en upwind y control de vela en mar abierto.",
+        message: "Hola! Quiero info sobre el downwind Ilha do Guajiru - Almofala."
+      },
+      aconchego: {
+        title: "Ilha do Guajiru → Aconchego do Mar",
+        level: "INICIANTE",
+        metric: "5 KM · 1H",
+        start: "Ilha do Guajiru",
+        end: "Aconchego do Mar",
+        instagramAria: "Ver Instagram de Aconchego do Mar",
+        desc: "Recorrido corto dentro de la laguna, en agua plana y poco profunda, ideal para quienes recién empiezan a encadenar tramos largos. Termina con almuerzo en la Barraca Aconchego do Mar, sobre la costa.",
+        message: "Hola! Quiero info sobre el downwind a Aconchego do Mar."
+      }
     },
     rooms: {
       roomA: "Habitación para 2 personas",
@@ -342,7 +373,7 @@ const translationOverrides = {
       beginnerTitle: "Clases de Kitesurf",
       beginnerDesc: "Clases por hora o paquete de 10 horas para aprender con seguridad en la laguna.",
       beginnerInc1: "1 hora: R$ 240",
-      beginnerInc2: "Curso 6 horas: R$ 1380",
+      beginnerInc2: "Paquete 10 horas: R$ 2300",
       beginnerInc3: "Instructor certificado y equipo de seguridad",
       beginnerInc4: "Ideal para principiantes e intermedios",
       completeCourse: "1 hora",
@@ -400,6 +431,7 @@ const translationOverrides = {
     }
   },
   pt: {
+    nav: { downwind: "DOWNWIND" },
     buttons: {
       bookNow: "Reservar agora",
       reserveShort: "Reservar",
@@ -413,6 +445,37 @@ const translationOverrides = {
       stayText: "Escolha entre quartos para 2, 3 ou 4 pessoas, todos com café da manhã, Wi-Fi e localização perto do kite point.",
       kiteTitle: "Aulas de Kite & Wing Foil",
       kiteText: "Aulas de kitesurf e wing foil com instrutores certificados, equipamentos cuidados e ótimas condições na Ilha do Guajiru."
+    },
+    downwind: {
+      title: "Passeios Downwind",
+      text: "Rotas guiadas para descobrir a lagoa, o rio e o mar aberto com apoio local da Wind Life.",
+      eyebrow: "ROTA GUIADA · WIND LIFE",
+      cta: "Consultar pelo WhatsApp",
+      routeType: "Rota guiada",
+      confirm: "sujeito às condições",
+      distanceAlmofala: "Distância: 10–12 km",
+      durationAlmofala: "Duração: 4–5 horas",
+      distanceAconchego: "Distância: ~5 km",
+      durationAconchego: "Duração: ~1 hora",
+      almofala: {
+        title: "Ilha do Guajiru → Almofala",
+        level: "INTERMEDIÁRIO",
+        metric: "11 KM · 4H30",
+        start: "Ilha do Guajiru",
+        end: "Almofala",
+        desc: "O downwind mais popular da região. Começa em água plana de rio, segue pela lagoa e termina em um trecho de mar aberto até as pousadas de Guajiru. Recomendado para riders com experiência em upwind e controle da vela em mar aberto.",
+        message: "Olá! Quero informações sobre o downwind Ilha do Guajiru - Almofala."
+      },
+      aconchego: {
+        title: "Ilha do Guajiru → Aconchego do Mar",
+        level: "INICIANTE",
+        metric: "5 KM · 1H",
+        start: "Ilha do Guajiru",
+        end: "Aconchego do Mar",
+        instagramAria: "Ver Instagram do Aconchego do Mar",
+        desc: "Percurso curto dentro da lagoa, em água plana e rasa, ideal para quem está começando a emendar trechos longos. Termina com almoço na Barraca Aconchego do Mar, na costa.",
+        message: "Olá! Quero informações sobre o downwind até Aconchego do Mar."
+      }
     },
     rooms: {
       roomA: "Quarto para 2 pessoas",
@@ -451,6 +514,7 @@ const translationOverrides = {
     }
   },
   en: {
+    nav: { downwind: "DOWNWIND" },
     buttons: {
       bookNow: "Book now",
       reserveShort: "Book",
@@ -464,6 +528,37 @@ const translationOverrides = {
       stayText: "Choose between rooms for 2, 3 or 4 people, all with breakfast, Wi-Fi and a location close to the kite point.",
       kiteTitle: "Kite & Wing Foil Classes",
       kiteText: "Kitesurf and wing foil lessons with certified instructors, well-kept gear and excellent conditions in Ilha do Guajiru."
+    },
+    downwind: {
+      title: "Downwind Trips",
+      text: "Guided routes to discover the lagoon, river and open sea with local Wind Life support.",
+      eyebrow: "GUIDED ROUTE · WIND LIFE",
+      cta: "Ask on WhatsApp",
+      routeType: "Guided route",
+      confirm: "weather dependent",
+      distanceAlmofala: "Distance: 10–12 km",
+      durationAlmofala: "Duration: 4–5 hours",
+      distanceAconchego: "Distance: ~5 km",
+      durationAconchego: "Duration: ~1 hour",
+      almofala: {
+        title: "Ilha do Guajiru → Almofala",
+        level: "INTERMEDIATE",
+        metric: "11 KM · 4H30",
+        start: "Ilha do Guajiru",
+        end: "Almofala",
+        desc: "The region's most popular downwind. It starts in flat river water, continues through the lagoon and finishes with an open-sea section to the Guajiru pousadas. Recommended for riders with upwind experience and kite control in open sea.",
+        message: "Hello! I want info about the Ilha do Guajiru - Almofala downwind."
+      },
+      aconchego: {
+        title: "Ilha do Guajiru → Aconchego do Mar",
+        level: "BEGINNER",
+        metric: "5 KM · 1H",
+        start: "Ilha do Guajiru",
+        end: "Aconchego do Mar",
+        instagramAria: "View Aconchego do Mar on Instagram",
+        desc: "A short route inside the lagoon, in flat and shallow water, ideal for riders who are starting to link longer stretches. It ends with lunch at Barraca Aconchego do Mar, on the coast.",
+        message: "Hello! I want info about the downwind to Aconchego do Mar."
+      }
     },
     rooms: {
       roomA: "Room for 2 people",
@@ -515,7 +610,7 @@ const kiteTripPrice = "$800 USD";
 const kiteTripDescription = "Inclui: traslado do aeroporto de Fortaleza, café da manhã, 8h de aulas de kite, jantares em grupo organizados, assistência durante a viagem, downwind guiado, quartos compartilhados, fotos e vídeos da viagem, presente surpresa para riders.";
 const classBookingPlans = [
   { name: "Clase particular 1h", price: "R$ 240", description: "Aula particular de kite com instrutor." },
-  { name: "Curso Iniciación 6h", price: "R$ 1380", description: "Curso de iniciação ao kite com equipamento e instrutor." },
+  { name: "Paquete Kite 10h", price: "R$ 2300", description: "Curso de kite com equipamento e instrutor." },
   { name: "Curso Perfeccionamiento 4h", price: "R$ 920", description: "Aperfeiçoamento com foco em evolução técnica." },
   { name: "Rental equipo completo", price: "R$ 500", description: "Kite + barra + tabla + arnés." }
 ];
@@ -562,6 +657,12 @@ function applyLanguage(lang) {
     const key = el.getAttribute("data-i18n-title");
     const value = getNestedTranslation(dict, key);
     if (value) el.setAttribute("title", value);
+  });
+
+  document.querySelectorAll("[data-whatsapp-message]").forEach((el) => {
+    const key = el.getAttribute("data-whatsapp-message");
+    const value = getNestedTranslation(dict, key);
+    if (value) el.setAttribute("href", `${whatsappUrl}?text=${encodeURIComponent(value)}`);
   });
 
   document.querySelectorAll("[data-lang]").forEach((btn) => {
@@ -1250,9 +1351,9 @@ const galleryPhotos = {
     "assets/img/wind/foto wind life 04.jpeg"
   ],
   kite: [
-    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.24.jpeg",
+    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.24 (2).jpeg",
     "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.25 (2).jpeg",
-    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.24 (3).jpeg",
+    "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.25 (3).jpeg",
     "assets/img/wind/WhatsApp Image 2026-06-23 at 15.50.25.jpeg"
   ],
   sunsets: [
@@ -1289,7 +1390,10 @@ const galleryPhotos = {
     "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18.jpeg",
     "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18 (1).jpeg",
     "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18 (2).jpeg",
-    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg"
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg",
+    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26.jpeg",
+    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26 (1).jpeg",
+    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26 (2).jpeg"
   ]
 };
 
@@ -1337,11 +1441,13 @@ const roomData = [
     descKey: "rooms.roomCDesc",
     badgeKey: "rooms.badgeC",
     price: stayNightPrice,
-    cover: "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (2).jpeg",
+    cover: "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/card 1.jpeg",
     photos: [
-      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (2).jpeg",
+      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/card 1.jpeg",
       "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
+      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (3).jpeg",
       "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (4).jpeg",
+      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (5).jpeg",
       "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg"
     ],
     amenities: ["Colchón D35", "Sábanas", "Almohada", "Toallas", "Ventilador", "Desayuno", "Wi-Fi"]
@@ -1355,7 +1461,7 @@ const kiteClasses = [
     price: "R$ 240",
     period: "1 hora",
     cover: "assets/img/atardecer/por do sol foto 03.jpeg",
-    bullets: ["Curso 6 horas: R$ 1380", "Instructor certificado", "Equipo de seguridad incluido"]
+    bullets: ["Paquete 10 horas: R$ 2300", "Instructor certificado", "Equipo de seguridad incluido"]
   },
   {
     title: "Clases de Wing Foil",
@@ -1500,7 +1606,7 @@ function renderPricingTables() {
         </tr>
         <tr>
           <td><div class="item">${t("pricing.beginnerCourse")}</div><div class="detail">${t("pricing.threeDaysGear")}</div></td>
-          <td class="price"><span class="currency">R$</span> 1380</td>
+          <td class="price"><span class="currency">R$</span> 2300</td>
         </tr>
         <tr>
           <td><div class="item">${t("pricing.improvementCourse")}</div><div class="detail">${t("pricing.videoAnalysis")}</div></td>
