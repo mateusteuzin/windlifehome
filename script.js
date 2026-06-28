@@ -1441,9 +1441,9 @@ const roomData = [
     descKey: "rooms.roomCDesc",
     badgeKey: "rooms.badgeC",
     price: stayNightPrice,
-    cover: "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/card 1.jpeg",
+    cover: "assets/img/foto nova toalha.jpeg",
     photos: [
-      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/card 1.jpeg",
+      "assets/img/foto nova toalha.jpeg",
       "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
       "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (3).jpeg",
       "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (4).jpeg",
