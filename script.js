@@ -322,7 +322,7 @@ const translationOverrides = {
     },
     downwind: {
       title: "Paseos Downwind",
-      text: "Rutas guiadas para descubrir la laguna, el río y el mar abierto con apoyo local de Wind Life.",
+      text: "Rutas guiadas por el mar y la costa de Ilha do Guajiru, con apoyo local de Wind Life.",
       eyebrow: "RUTA GUIADA · WIND LIFE",
       cta: "Consultar por WhatsApp",
       routeType: "Ruta guiada",
@@ -337,7 +337,7 @@ const translationOverrides = {
         metric: "11 KM · 4H30",
         start: "Ilha do Guajiru",
         end: "Almofala",
-        desc: "El downwind más popular de la región. Arranca en agua plana de río, sigue por laguna y termina en tramo de mar abierto hasta las pousadas de Guajiru. Recomendado para riders con experiencia en upwind y control de vela en mar abierto.",
+        desc: "Ruta clásica de downwind para riders con experiencia en el mar. Salida desde Ilha do Guajiru, siguiendo la costa con viento constante, agua azul y visual abierto hasta Almofala. Recomendada para riders intermedios, con dominio de upwind y seguridad en mar abierto.",
         message: "Hola! Quiero info sobre el downwind Ilha do Guajiru - Almofala."
       },
       aconchego: {
@@ -347,7 +347,7 @@ const translationOverrides = {
         start: "Ilha do Guajiru",
         end: "Aconchego do Mar",
         instagramAria: "Ver Instagram de Aconchego do Mar",
-        desc: "Recorrido corto dentro de la laguna, en agua plana y poco profunda, ideal para quienes recién empiezan a encadenar tramos largos. Termina con almuerzo en la Barraca Aconchego do Mar, sobre la costa.",
+        desc: "Recorrido corto y leve por el mar de la región, con visual de la costa, cocoteros y barracas frente al mar. Ideal para quienes buscan una experiencia de downwind más tranquila, finalizando en Aconchego do Mar con parada para almorzar.",
         message: "Hola! Quiero info sobre el downwind a Aconchego do Mar."
       }
     },
@@ -448,7 +448,7 @@ const translationOverrides = {
     },
     downwind: {
       title: "Passeios Downwind",
-      text: "Rotas guiadas para descobrir a lagoa, o rio e o mar aberto com apoio local da Wind Life.",
+      text: "Rotas guiadas pelo mar e pela costa da Ilha do Guajiru, com apoio local da Wind Life.",
       eyebrow: "ROTA GUIADA · WIND LIFE",
       cta: "Consultar pelo WhatsApp",
       routeType: "Rota guiada",
@@ -463,7 +463,7 @@ const translationOverrides = {
         metric: "11 KM · 4H30",
         start: "Ilha do Guajiru",
         end: "Almofala",
-        desc: "O downwind mais popular da região. Começa em água plana de rio, segue pela lagoa e termina em um trecho de mar aberto até as pousadas de Guajiru. Recomendado para riders com experiência em upwind e controle da vela em mar aberto.",
+        desc: "Rota clássica de downwind para quem já tem experiência no mar. Saída da Ilha do Guajiru, seguindo pela costa com vento constante, água azul e visual aberto até Almofala. Indicada para riders intermediários, com domínio de upwind e segurança em mar aberto.",
         message: "Olá! Quero informações sobre o downwind Ilha do Guajiru - Almofala."
       },
       aconchego: {
@@ -473,7 +473,7 @@ const translationOverrides = {
         start: "Ilha do Guajiru",
         end: "Aconchego do Mar",
         instagramAria: "Ver Instagram do Aconchego do Mar",
-        desc: "Percurso curto dentro da lagoa, em água plana e rasa, ideal para quem está começando a emendar trechos longos. Termina com almoço na Barraca Aconchego do Mar, na costa.",
+        desc: "Percurso curto e leve pelo mar da região, com visual da costa, coqueiros e barracas à beira-mar. Ideal para quem quer uma experiência mais tranquila de downwind, finalizando no Aconchego do Mar com parada para almoço.",
         message: "Olá! Quero informações sobre o downwind até Aconchego do Mar."
       }
     },
@@ -531,7 +531,7 @@ const translationOverrides = {
     },
     downwind: {
       title: "Downwind Trips",
-      text: "Guided routes to discover the lagoon, river and open sea with local Wind Life support.",
+      text: "Guided routes along the sea and coast of Ilha do Guajiru, with local Wind Life support.",
       eyebrow: "GUIDED ROUTE · WIND LIFE",
       cta: "Ask on WhatsApp",
       routeType: "Guided route",
@@ -546,7 +546,7 @@ const translationOverrides = {
         metric: "11 KM · 4H30",
         start: "Ilha do Guajiru",
         end: "Almofala",
-        desc: "The region's most popular downwind. It starts in flat river water, continues through the lagoon and finishes with an open-sea section to the Guajiru pousadas. Recommended for riders with upwind experience and kite control in open sea.",
+        desc: "A classic downwind route for riders who already have experience at sea. Starting from Ilha do Guajiru, the route follows the coast with steady wind, blue water and open views all the way to Almofala. Recommended for intermediate riders with solid upwind control and confidence in open-sea conditions.",
         message: "Hello! I want info about the Ilha do Guajiru - Almofala downwind."
       },
       aconchego: {
@@ -556,7 +556,7 @@ const translationOverrides = {
         start: "Ilha do Guajiru",
         end: "Aconchego do Mar",
         instagramAria: "View Aconchego do Mar on Instagram",
-        desc: "A short route inside the lagoon, in flat and shallow water, ideal for riders who are starting to link longer stretches. It ends with lunch at Barraca Aconchego do Mar, on the coast.",
+        desc: "A short and easy route along the local sea, with coastal views, coconut trees and beachfront barracas. Ideal for riders looking for a calmer downwind experience, finishing at Aconchego do Mar with a stop for lunch.",
         message: "Hello! I want info about the downwind to Aconchego do Mar."
       }
     },
