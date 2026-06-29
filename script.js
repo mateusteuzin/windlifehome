@@ -43,17 +43,17 @@ const translations = {
       children: "NIÑOS",
       nights: "NOCHES",
       roomType: "TIPO DE HABITACIÓN",
-      roomA: "Habitación para 2 personas",
-      roomB: "Habitación para 3 personas",
+      roomA: "Habitación 1",
+      roomB: "Habitación 2",
       roomDesc: "Colchón densidad 35 · Sábanas · Almohada · Toallas · Ventilador · Desayuno · Wi-Fi",
-      perNight: "por noche",
+      perNight: "por persona/noche",
       direct: "Reserva directa: <strong>10% OFF</strong> y sin cargos extra",
       payment: "Pago seguro vía <strong>Pix · Tarjeta · Mercado Pago</strong>"
     },
     miniBar: {
       from: "Dormí desde",
       beds: "Solo 9 camas disponibles",
-      fromHtml: "Dormí desde <strong>R$ 150/noche</strong>",
+      fromHtml: "Dormí desde <strong>R$ 150 por persona/noche</strong>",
       bedsHtml: "Solo <strong>9 camas disponibles</strong>"
     },
     whatsapp: {
@@ -94,12 +94,12 @@ const translations = {
       locationTitle: "Ilha do Guajiru, Ceará — Brasil"
     },
     rooms: {
-      roomA: "Habitación para 2 personas",
-      roomB: "Habitación para 3 personas",
+      roomA: "Habitación 1",
+      roomB: "Habitación 2",
       roomADesc: "Habitación con colchón densidad 35, sábanas, almohada, toallas, ventilador, desayuno y Wi-Fi.",
       roomBDesc: "Habitación con colchón densidad 35, sábanas, almohada, toallas, ventilador, desayuno y Wi-Fi.",
-      badgeA: "HABITACIÓN A",
-      badgeB: "HABITACIÓN B",
+      badgeA: "HABITACIÓN 1",
+      badgeB: "HABITACIÓN 2",
       amenityBeds: "Capacidad correcta",
       amenityLocker: "Locker",
       amenityFan: "Ventilador",
@@ -149,9 +149,9 @@ const translations = {
     pricing: {
       label: "TARIFARIO 2025",
       text: "Precios en Reales Brasileños (BRL). Tarifario de referencia — sujeto a confirmación final. Cotización en ARS/USD disponible al reservar.",
-      homeSub: "9 camas · habitaciones para 2, 3 y 4 personas · Por persona / noche",
-      roomA: "Habitación para 2 personas",
-      roomB: "Habitación para 3 personas",
+      homeSub: "9 camas · Habitación 1, Habitación 2 y Habitación 3 · R$ 150 por persona/noche",
+      roomA: "Habitación 1",
+      roomB: "Habitación 2",
       roomDetail: "Colchón densidad 35 · Sábanas · Almohada · Toallas · Ventilador · Desayuno · Wi-Fi",
       packStay: "Pack 7 noches",
       breakfastEveryDay: "Con desayuno todos los días",
@@ -220,8 +220,8 @@ const translations = {
     nav: { stay: "ACOMODAÇÃO", kite: "KITE CENTER", experience: "EXPERIÊNCIA", prices: "PREÇOS", location: "LOCALIZAÇÃO", contact: "CONTATO", openMenu: "Abrir menu", selectLanguage: "Selecionar idioma" },
     buttons: { bookNow: "RESERVE JÁ", reserveShort: "RESERVAR", viewStay: "VER ACOMODAÇÃO", viewStayArrow: "VER ACOMODAÇÃO →", kiteCenter: "KITE CENTER", checkAvailability: "VERIFICAR DISPONIBILIDADE", bookClass: "RESERVAR AULA", ask: "CONSULTAR", whatsapp: "WHATSAPP" },
     hero: { location: "ILHA DO GUAJIRU — CEARÁ, BRASIL", titleHtml: "EXPERIMENTE<br>O <span>VENTO.</span><br>SINTA O <span>OCEANO.</span>", description: "Wind Life Home é uma escola de kitesurf no coração de Guajiru. Quartos estilo rider a quatro quadras de um dos melhores picos do Nordeste.", statsWind: "Dias de vento<br>por ano", statsRating: "Avaliação<br>dos hóspedes", statsBeds: "Camas<br>disponíveis" },
-    booking: { title: "RESERVE SUA ESTADIA", bestPrice: "MELHOR PREÇO", stay: "ACOMODAÇÃO", kiteStay: "KITE + STAY", classesOnly: "SOMENTE AULAS", checkin: "CHECK-IN", checkout: "CHECK-OUT", adults: "ADULTOS", children: "CRIANÇAS", nights: "NOITES", roomType: "TIPO DE QUARTO", roomA: "Quarto para 2 pessoas", roomB: "Quarto para 3 pessoas", roomDesc: "Colchão densidade 35 · Lençóis · Travesseiro · Toalhas · Ventilador · Café da manhã · Wi-Fi", perNight: "por noite", direct: "Reserva direta: <strong>10% OFF</strong> e sem custos extras", payment: "Pagamento seguro via <strong>Pix · Cartão · Mercado Pago</strong>" },
-    miniBar: { from: "Diárias a partir de", beds: "Apenas 9 camas disponíveis", fromHtml: "Diárias a partir de <strong>R$ 150/noite</strong>", bedsHtml: "Apenas <strong>9 camas disponíveis</strong>" },
+    booking: { title: "RESERVE SUA ESTADIA", bestPrice: "MELHOR PREÇO", stay: "ACOMODAÇÃO", kiteStay: "KITE + STAY", classesOnly: "SOMENTE AULAS", checkin: "CHECK-IN", checkout: "CHECK-OUT", adults: "ADULTOS", children: "CRIANÇAS", nights: "NOITES", roomType: "TIPO DE QUARTO", roomA: "Quarto 1", roomB: "Quarto 2", roomDesc: "Colchão densidade 35 · Lençóis · Travesseiro · Toalhas · Ventilador · Café da manhã · Wi-Fi", perNight: "por pessoa/noite", direct: "Reserva direta: <strong>10% OFF</strong> e sem custos extras", payment: "Pagamento seguro via <strong>Pix · Cartão · Mercado Pago</strong>" },
+    miniBar: { from: "Diárias a partir de", beds: "Apenas 9 camas disponíveis", fromHtml: "Diárias a partir de <strong>R$ 150 por pessoa/noite</strong>", bedsHtml: "Apenas <strong>9 camas disponíveis</strong>" },
     whatsapp: {
       label: "Contactar por WhatsApp",
       classMessage: "Olá, quero reservar uma aula de kite",
@@ -230,10 +230,10 @@ const translations = {
     trust: { windTitle: "VENTO GARANTIDO", windSub: "+300 dias · 4 quadras do pico", instructorsTitle: "INSTRUTORES CERTIFICADOS", instructorsSub: "IKO Level 2 · Aulas em 3 idiomas", secureTitle: "RESERVA SEGURA", secureSub: "Pix · Cartão · Cancelamento flexível", breakfastTitle: "CAFÉ DA MANHÃ INCLUSO", breakfastSub: "Frutas, pão de queijo e café", wifiTitle: "WIFI DE ALTA VELOCIDADE", wifiSub: "Em toda a propriedade" },
     about: { blocksFromSpot: "Quadras do pico", label: "O ESPÍRITO WIND LIFE", titleHtml: "Nasce da<br>evolução natural<br>do kitesurf.", text: "Wind Life não é apenas um nome, é um estilo de vida no coração da Ilha do Guajiru. A identidade visual captura o momento exato em que a vela infla e a aventura começa. Uma marca feita para ser reconhecida da areia e lembrada no descanso.", pillarWindTitle: "FLUIDEZ DO VENTO", pillarWindText: "Condições perfeitas o ano todo em Guajiru", pillarOceanTitle: "ENERGIA DO OCEANO", pillarOceanText: "Lagoa + mar aberto a 300m", pillarCommunityTitle: "COMUNIDADE", pillarCommunityText: "Riders do mundo inteiro no mesmo lugar" },
     sections: { stayTitle: "ACOMODAÇÃO & DESCANSO", stayText: "De dormitórios compartilhados com espírito mochileiro a suítes privadas com vista para o pico. Todos os quartos com café da manhã incluso.", kiteTitle: "ESCOLA & ALUGUEL DE EQUIPAMENTOS", kiteText: "Instrutores IKO Level 2 certificados. Aulas em espanhol, português e inglês. Equipamentos modernos Duotone e Cabrinha de última geração.", pricesTitle: "PREÇOS & DISPONIBILIDADE", locationTitle: "Ilha do Guajiru, Ceará — Brasil" },
-    rooms: { roomA: "Quarto para 2 pessoas", roomB: "Quarto para 3 pessoas", roomADesc: "Quarto com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.", roomBDesc: "Quarto com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.", badgeA: "QUARTO A", badgeB: "QUARTO B", amenityBeds: "Capacidade correta", amenityLocker: "Armário", amenityFan: "Ventilador", amenityBreakfast: "Café da manhã", amenitySharedBath: "Banheiro compartilhado", amenitySpot: "4 quadras do pico", perPersonNight: "por pessoa / noite" },
+    rooms: { roomA: "Quarto 1", roomB: "Quarto 2", roomADesc: "Quarto com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.", roomBDesc: "Quarto com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.", badgeA: "QUARTO 1", badgeB: "QUARTO 2", amenityBeds: "Capacidade correta", amenityLocker: "Armário", amenityFan: "Ventilador", amenityBreakfast: "Café da manhã", amenitySharedBath: "Banheiro compartilhado", amenitySpot: "4 quadras do pico", perPersonNight: "por pessoa/noite" },
     kite: { beginnerLevel: "INICIANTE", beginnerTitle: "INICIAÇÃO AO KITE", beginnerDesc: "Do zero ao seu primeiro water start. Teoria, controle da barra, body drag e primeiros decolamentos assistidos na lagoa.", beginnerInc1: "6 horas de instrução divididas em 3 dias", beginnerInc2: "Equipamento completo incluso (kite + barra + trapézio)", beginnerInc3: "Material teórico digital", beginnerInc4: "Certificado IKO Level 1", completeCourse: "curso completo", intermediateLevel: "INTERMEDIÁRIO", intermediateTitle: "APERFEIÇOAMENTO", intermediateDesc: "Você já navega, agora melhore sua técnica. Upwind, rides, transições e primeiros saltos no pico aberto.", intermediateInc1: "4 horas de coaching personalizado", intermediateInc2: "Análise de técnica com vídeo", intermediateInc3: "Equipamento incluso ou uso do próprio", intermediateInc4: "Plano de melhoria personalizado", fourHours: "4 horas", rentalLevel: "ALUGUEL", rentalTitle: "ALUGUEL DE EQUIPAMENTOS", rentalDesc: "Alugue o equipamento que precisa por horas ou dias. Kites, barras, pranchas e trapézios premium em perfeitas condições.", rentalInc1: "Duotone & Cabrinha últimas coleções", rentalInc2: "Pranchas twintip e directional", rentalInc3: "Revisão técnica antes do uso", rentalInc4: "Seguro contra danos incluso", fullGearDay: "equipamento completo / dia" },
     experience: { label: "A EXPERIÊNCIA", titleHtml: "Cada dia é<br>uma nova sessão.", tileRooms: "Quartos", tileCommon: "Área Comum", tileSunsets: "Pôr do sol", tileBaths: "Banheiros", testimonialsLabel: "O QUE DIZEM NOSSOS RIDERS", quote1: "\"Cheguei sem saber nada de kite e saí com o nível 1 completo. Os instrutores são incríveis e a Wind Life Home tem o melhor ambiente que vivi no Brasil.\"", quote2: "\"O spot em Guajiru é perfeito para iniciantes e avançados. A Wind Life tem tudo no mesmo lugar — impossível não voltar!\"", ratingText: "<strong>+85 avaliações</strong><br>Google · Booking · Hostelworld" },
-    pricing: { label: "TARIFÁRIO 2025", text: "Preços em Reais Brasileiros (BRL). Tarifário de referência — sujeito a confirmação final. Cotação em ARS/USD disponível ao reservar.", homeSub: "9 camas · quartos para 2, 3 e 4 pessoas · Por pessoa / noite", roomA: "Quarto para 2 pessoas", roomB: "Quarto para 3 pessoas", roomDetail: "Colchão densidade 35 · Lençóis · Travesseiro · Toalhas · Ventilador · Café da manhã · Wi-Fi", packStay: "Pacote 7 noites", breakfastEveryDay: "Com café da manhã todos os dias", homeNote: "Café da manhã incluso · Wi-Fi · Colchão D35 · Lençóis · Travesseiro · Toalhas · Ventilador", kiteSub: "Aulas · Aluguel · Pacotes", privateClass: "Aula particular (1h)", ikoInstructor: "Instrutor certificado IKO", beginnerCourse: "Curso Iniciação (6h)", threeDaysGear: "3 dias · Equipamento incluso", improvementCourse: "Curso Aperfeiçoamento", videoAnalysis: "4h · Análise em vídeo", fullGearRental: "Aluguel Equipamento Completo", gearDetail: "Kite + barra + prancha + trapézio", perDay: "/dia", kitePack: "Kite Trip", kitePackDetail: "Transfer FOR · café da manhã · 8h aulas · jantares em grupo · downwind guiado · quartos compartilhados · fotos/vídeos · presente surpresa", kiteNote: "Certificado IKO incluso nos cursos · Neoprene e equipamentos de segurança fornecidos", paymentMethods: "FORMAS DE PAGAMENTO", paymentMethodsText: "Pix · Cartão de crédito/débito<br>Mercado Pago Brasil · Transferência", depositPolicy: "POLÍTICA DE SINAL", depositPolicyText: "30% ao reservar para confirmar<br>70% restante no check-in", cancellation: "CANCELAMENTO", cancellationText: "Cancelamento sem custo até 72h<br>antes do check-in" },
+    pricing: { label: "TARIFÁRIO 2025", text: "Preços em Reais Brasileiros (BRL). Tarifário de referência — sujeito a confirmação final. Cotação em ARS/USD disponível ao reservar.", homeSub: "9 camas · Quarto 1, Quarto 2 e Quarto 3 · R$ 150 por pessoa/noite", roomA: "Quarto 1", roomB: "Quarto 2", roomDetail: "Colchão densidade 35 · Lençóis · Travesseiro · Toalhas · Ventilador · Café da manhã · Wi-Fi", packStay: "Pacote 7 noites", breakfastEveryDay: "Com café da manhã todos os dias", homeNote: "Café da manhã incluso · Wi-Fi · Colchão D35 · Lençóis · Travesseiro · Toalhas · Ventilador", kiteSub: "Aulas · Aluguel · Pacotes", privateClass: "Aula particular (1h)", ikoInstructor: "Instrutor certificado IKO", beginnerCourse: "Curso Iniciação (6h)", threeDaysGear: "3 dias · Equipamento incluso", improvementCourse: "Curso Aperfeiçoamento", videoAnalysis: "4h · Análise em vídeo", fullGearRental: "Aluguel Equipamento Completo", gearDetail: "Kite + barra + prancha + trapézio", perDay: "/dia", kitePack: "Kite Trip", kitePackDetail: "Transfer FOR · café da manhã · 8h aulas · jantares em grupo · downwind guiado · quartos compartilhados · fotos/vídeos · presente surpresa", kiteNote: "Certificado IKO incluso nos cursos · Neoprene e equipamentos de segurança fornecidos", paymentMethods: "FORMAS DE PAGAMENTO", paymentMethodsText: "Pix · Cartão de crédito/débito<br>Mercado Pago Brasil · Transferência", depositPolicy: "POLÍTICA DE SINAL", depositPolicyText: "30% ao reservar para confirmar<br>70% restante no check-in", cancellation: "CANCELAMENTO", cancellationText: "Cancelamento sem custo até 72h<br>antes do check-in" },
     location: { label: "COMO CHEGAR", text: "Localizados diretamente na lagoa na Ilha do Guajiru, um dos melhores picos de kitesurf do mundo. A 4 quadras a pé do pico e a 3 horas de Fortaleza desde o aeroporto.", airportTitle: "AEROPORTO MAIS PRÓXIMO", airportValue: "Fortaleza (FOR) — 280 km", transferTitle: "TRANSFER DISPONÍVEL", transferValue: "Shuttle desde Fortaleza · R$ 600", windSeasonTitle: "ALTA TEMPORADA DE VENTO", windSeasonValue: "Julho — Dezembro", temperatureTitle: "TEMPERATURA MÉDIA", temperatureValue: "28°C o ano todo", maps: "VER NO GOOGLE MAPS", transfer: "SOLICITAR TRANSFER" },
     cta: { label: "PRONTO PARA VOAR?", title: "Sua aventura começa na Wind Life.", text: "Apenas 9 camas disponíveis — reserve com antecedência para garantir seu lugar. A equipe responde em menos de 2 horas pelo WhatsApp." },
     footer: { stay: "ACOMODAÇÃO", kite: "KITE CENTER", contact: "CONTATO", tagline: "A referência da Ilha do Guajiru. A 4 quadras do pico. Hospitalidade, adrenalina e comunidade no Nordeste brasileiro.", sharedDorms: "Dormitórios Compartilhados", privateSuites: "Suítes Privadas", breakfastServices: "Café da Manhã & Serviços", chillArea: "Área Chill-out", availability: "Disponibilidade", beginnerCourse: "Curso Iniciação", improvement: "Aperfeiçoamento", rental: "Aluguel de Equipamentos", comboPackages: "Pacotes Combo", classCalendar: "Calendário de Aulas", copyright: "© 2025 Wind Life Home & Kitesurf — Ilha do Guajiru, Brasil", credit: "Desenvolvido por Backfire Agency" }
@@ -244,8 +244,8 @@ const translations = {
     nav: { stay: "STAY", kite: "KITE CENTER", experience: "EXPERIENCE", prices: "PRICES", location: "LOCATION", contact: "CONTACT", openMenu: "Open menu", selectLanguage: "Select language" },
     buttons: { bookNow: "BOOK NOW", reserveShort: "BOOK", viewStay: "VIEW STAY", viewStayArrow: "VIEW STAY →", kiteCenter: "KITE CENTER", checkAvailability: "CHECK AVAILABILITY", bookClass: "BOOK CLASS", ask: "ASK", whatsapp: "WHATSAPP" },
     hero: { location: "ILHA DO GUAJIRU — CEARÁ, BRAZIL", titleHtml: "LIVE THE<br><span>WIND.</span><br>FEEL THE<br><span>OCEAN.</span>", description: "Wind Life Home is a kitesurf school in the heart of Guajiru. Rider-style rooms four blocks from one of Northeast Brazil's best spots.", statsWind: "Wind days<br>per year", statsRating: "Guest<br>rating", statsBeds: "Beds<br>available" },
-    booking: { title: "BOOK YOUR STAY", bestPrice: "BEST PRICE", stay: "STAY", kiteStay: "KITE + STAY", classesOnly: "CLASSES ONLY", checkin: "CHECK-IN", checkout: "CHECK-OUT", adults: "ADULTS", children: "CHILDREN", nights: "NIGHTS", roomType: "ROOM TYPE", roomA: "Room for 2 people", roomB: "Room for 3 people", roomDesc: "Density 35 mattress · Sheets · Pillow · Towels · Fan · Breakfast · Wi-Fi", perNight: "per night", direct: "Direct booking: <strong>10% OFF</strong> and no extra fees", payment: "Secure payment via <strong>Pix · Card · Mercado Pago</strong>" },
-    miniBar: { from: "Stay from", beds: "Only 9 beds available", fromHtml: "Stay from <strong>R$ 150/night</strong>", bedsHtml: "Only <strong>9 beds available</strong>" },
+    booking: { title: "BOOK YOUR STAY", bestPrice: "BEST PRICE", stay: "STAY", kiteStay: "KITE + STAY", classesOnly: "CLASSES ONLY", checkin: "CHECK-IN", checkout: "CHECK-OUT", adults: "ADULTS", children: "CHILDREN", nights: "NIGHTS", roomType: "ROOM TYPE", roomA: "Room 1", roomB: "Room 2", roomDesc: "Density 35 mattress · Sheets · Pillow · Towels · Fan · Breakfast · Wi-Fi", perNight: "per person/night", direct: "Direct booking: <strong>10% OFF</strong> and no extra fees", payment: "Secure payment via <strong>Pix · Card · Mercado Pago</strong>" },
+    miniBar: { from: "Stay from", beds: "Only 9 beds available", fromHtml: "Stay from <strong>R$ 150 per person/night</strong>", bedsHtml: "Only <strong>9 beds available</strong>" },
     whatsapp: {
       label: "Contact via WhatsApp",
       classMessage: "Hello, I want to book a kite class",
@@ -254,10 +254,10 @@ const translations = {
     trust: { windTitle: "GUARANTEED WIND", windSub: "+300 days · 4 blocks from the spot", instructorsTitle: "CERTIFIED INSTRUCTORS", instructorsSub: "IKO Level 2 · Classes in 3 languages", secureTitle: "SECURE BOOKING", secureSub: "Pix · Card · Flexible cancellation", breakfastTitle: "BREAKFAST INCLUDED", breakfastSub: "Fruit, pão de queijo and coffee", wifiTitle: "HIGH-SPEED WIFI", wifiSub: "Across the property" },
     about: { blocksFromSpot: "Blocks from the spot", label: "THE WIND LIFE SPIRIT", titleHtml: "Born from the<br>natural evolution<br>of kitesurfing.", text: "Wind Life is not just a name, it is a lifestyle in the heart of Ilha do Guajiru. The visual identity captures the exact moment the kite fills with wind and the adventure begins. A brand designed to be recognized from the sand and remembered at rest.", pillarWindTitle: "WIND FLUIDITY", pillarWindText: "Perfect conditions all year in Guajiru", pillarOceanTitle: "OCEAN ENERGY", pillarOceanText: "Lagoon + open sea 300m away", pillarCommunityTitle: "COMMUNITY", pillarCommunityText: "Riders from around the world in one place" },
     sections: { stayTitle: "STAY & REST", stayText: "From shared dorms with a backpacker spirit to private suites overlooking the spot. All rooms include breakfast.", kiteTitle: "SCHOOL & EQUIPMENT RENTAL", kiteText: "Certified IKO Level 2 instructors. Classes in Spanish, Portuguese and English. Modern latest-generation Duotone and Cabrinha gear.", pricesTitle: "PRICES & AVAILABILITY", locationTitle: "Ilha do Guajiru, Ceará — Brazil" },
-    rooms: { roomA: "Room for 2 people", roomB: "Room for 3 people", roomADesc: "Room with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.", roomBDesc: "Room with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.", badgeA: "ROOM A", badgeB: "ROOM B", amenityBeds: "Correct capacity", amenityLocker: "Locker", amenityFan: "Fan", amenityBreakfast: "Breakfast", amenitySharedBath: "Shared bathroom", amenitySpot: "4 blocks from spot", perPersonNight: "per person / night" },
+    rooms: { roomA: "Room 1", roomB: "Room 2", roomADesc: "Room with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.", roomBDesc: "Room with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.", badgeA: "ROOM 1", badgeB: "ROOM 2", amenityBeds: "Correct capacity", amenityLocker: "Locker", amenityFan: "Fan", amenityBreakfast: "Breakfast", amenitySharedBath: "Shared bathroom", amenitySpot: "4 blocks from spot", perPersonNight: "per person/night" },
     kite: { beginnerLevel: "BEGINNER", beginnerTitle: "KITE INTRODUCTION", beginnerDesc: "From zero to your first water start. Theory, bar handling, body drag and assisted first launches in the lagoon.", beginnerInc1: "6 hours of instruction split across 3 days", beginnerInc2: "Full gear included (kite + bar + harness)", beginnerInc3: "Digital theory material", beginnerInc4: "IKO Level 1 certificate", completeCourse: "full course", intermediateLevel: "INTERMEDIATE", intermediateTitle: "IMPROVEMENT", intermediateDesc: "You already ride, now refine your technique. Upwind, rides, transitions and first jumps in the open spot.", intermediateInc1: "4 hours of personalized coaching", intermediateInc2: "Video technique analysis", intermediateInc3: "Gear included or use your own", intermediateInc4: "Personalized improvement plan", fourHours: "4 hours", rentalLevel: "RENTAL", rentalTitle: "GEAR RENTAL", rentalDesc: "Rent the gear you need by the hour or day. Premium kites, bars, boards and harnesses in perfect condition.", rentalInc1: "Latest Duotone & Cabrinha collections", rentalInc2: "Twintip and directional boards", rentalInc3: "Technical check before use", rentalInc4: "Damage insurance included", fullGearDay: "full gear / day" },
     experience: { label: "THE EXPERIENCE", titleHtml: "Every day is<br>a new session.", tileRooms: "Rooms", tileCommon: "Common Area", tileSunsets: "Sunsets", tileBaths: "Bathrooms", testimonialsLabel: "WHAT OUR RIDERS SAY", quote1: "\"I arrived knowing nothing about kite and left with level 1 completed. The instructors are amazing and Wind Life Home has the best atmosphere I experienced in Brazil.\"", quote2: "\"The spot in Guajiru is perfect for beginners and advanced riders. Wind Life has everything in one place — impossible not to come back!\"", ratingText: "<strong>+85 reviews</strong><br>Google · Booking · Hostelworld" },
-    pricing: { label: "2025 RATES", text: "Prices in Brazilian Reais (BRL). Reference rates — subject to final confirmation. ARS/USD quote available when booking.", homeSub: "9 beds · rooms for 2, 3 and 4 people · Per person / night", roomA: "Room for 2 people", roomB: "Room for 3 people", roomDetail: "Density 35 mattress · Sheets · Pillow · Towels · Fan · Breakfast · Wi-Fi", packStay: "7-night package", breakfastEveryDay: "With breakfast every day", homeNote: "Breakfast included · Wi-Fi · D35 mattress · Sheets · Pillow · Towels · Fan", kiteSub: "Classes · Rental · Packages", privateClass: "Private class (1h)", ikoInstructor: "Certified IKO instructor", beginnerCourse: "Beginner Course (6h)", threeDaysGear: "3 days · Gear included", improvementCourse: "Improvement Course", videoAnalysis: "4h · Video analysis", fullGearRental: "Full Gear Rental", gearDetail: "Kite + bar + board + harness", perDay: "/day", kitePack: "Kite Trip", kitePackDetail: "FOR transfer · breakfast · 8h lessons · group dinners · guided downwind · shared rooms · photos/videos · surprise gift", kiteNote: "IKO certificate included in courses · Wetsuit and safety gear provided", paymentMethods: "PAYMENT METHODS", paymentMethodsText: "Pix · Credit/debit card<br>Mercado Pago Brazil · Bank transfer", depositPolicy: "DEPOSIT POLICY", depositPolicyText: "30% when booking to confirm<br>70% remaining at check-in", cancellation: "CANCELLATION", cancellationText: "Free cancellation up to 72h<br>before check-in" },
+    pricing: { label: "2025 RATES", text: "Prices in Brazilian Reais (BRL). Reference rates — subject to final confirmation. ARS/USD quote available when booking.", homeSub: "9 beds · Room 1, Room 2 and Room 3 · R$ 150 per person/night", roomA: "Room 1", roomB: "Room 2", roomDetail: "Density 35 mattress · Sheets · Pillow · Towels · Fan · Breakfast · Wi-Fi", packStay: "7-night package", breakfastEveryDay: "With breakfast every day", homeNote: "Breakfast included · Wi-Fi · D35 mattress · Sheets · Pillow · Towels · Fan", kiteSub: "Classes · Rental · Packages", privateClass: "Private class (1h)", ikoInstructor: "Certified IKO instructor", beginnerCourse: "Beginner Course (6h)", threeDaysGear: "3 days · Gear included", improvementCourse: "Improvement Course", videoAnalysis: "4h · Video analysis", fullGearRental: "Full Gear Rental", gearDetail: "Kite + bar + board + harness", perDay: "/day", kitePack: "Kite Trip", kitePackDetail: "FOR transfer · breakfast · 8h lessons · group dinners · guided downwind · shared rooms · photos/videos · surprise gift", kiteNote: "IKO certificate included in courses · Wetsuit and safety gear provided", paymentMethods: "PAYMENT METHODS", paymentMethodsText: "Pix · Credit/debit card<br>Mercado Pago Brazil · Bank transfer", depositPolicy: "DEPOSIT POLICY", depositPolicyText: "30% when booking to confirm<br>70% remaining at check-in", cancellation: "CANCELLATION", cancellationText: "Free cancellation up to 72h<br>before check-in" },
     location: { label: "HOW TO GET THERE", text: "Located directly on the lagoon in Ilha do Guajiru, one of the world's best kitesurf spots. Four blocks walking from the spot and 3 hours from Fortaleza airport.", airportTitle: "NEAREST AIRPORT", airportValue: "Fortaleza (FOR) — 280 km", transferTitle: "TRANSFER AVAILABLE", transferValue: "Shuttle from Fortaleza · R$ 600", windSeasonTitle: "HIGH WIND SEASON", windSeasonValue: "July — December", temperatureTitle: "AVERAGE TEMPERATURE", temperatureValue: "28°C all year", maps: "OPEN IN GOOGLE MAPS", transfer: "REQUEST TRANSFER" },
     cta: { label: "READY TO FLY?", title: "Your adventure starts at Wind Life.", text: "Only 9 beds available — book early to secure your spot. The team replies on WhatsApp in under 2 hours." },
     footer: { stay: "STAY", kite: "KITE CENTER", contact: "CONTACT", tagline: "The reference in Ilha do Guajiru. Four blocks from the spot. Hospitality, adrenaline and community in Northeast Brazil.", sharedDorms: "Shared Dorms", privateSuites: "Private Suites", breakfastServices: "Breakfast & Services", chillArea: "Chill-out Area", availability: "Availability", beginnerCourse: "Beginner Course", improvement: "Improvement", rental: "Gear Rental", comboPackages: "Combo Packages", classCalendar: "Class Calendar", copyright: "© 2025 Wind Life Home & Kitesurf — Ilha do Guajiru, Brazil", credit: "Desenvolvido por Backfire Agency" }
@@ -310,13 +310,13 @@ const translationOverrides = {
       availability: "Consultar disponibilidad"
     },
     booking: {
-      roomA: "Habitación para 2 personas",
-      roomB: "Habitación para 3 personas",
+      roomA: "Habitación 1",
+      roomB: "Habitación 2",
       roomDesc: "Colchón densidad 35 · Sábanas · Almohada · Toallas · Ventilador · Desayuno · Wi-Fi"
     },
     sections: {
       stayTitle: "Habitaciones y alojamientos",
-      stayText: "Elige entre habitaciones para 2, 3 o 4 personas, todas con desayuno, Wi-Fi y ubicación cerca del kite point.",
+      stayText: "Elige entre Habitación 1, Habitación 2 y Habitación 3, todas con desayuno, Wi-Fi y ubicación cerca del kite point.",
       kiteTitle: "Clases de Kite & Wing Foil",
       kiteText: "Aulas de kitesurf y wing foil con instructores certificados, equipos cuidados y condiciones perfectas en Ilha do Guajiru."
     },
@@ -352,15 +352,15 @@ const translationOverrides = {
       }
     },
     rooms: {
-      roomA: "Habitación para 2 personas",
-      roomB: "Habitación para 3 personas",
-      roomC: "Habitación para 4 personas",
+      roomA: "Habitación 1",
+      roomB: "Habitación 2",
+      roomC: "Habitación 3",
       roomADesc: "Espacio íntimo para parejas o amigos, con colchón densidad 35, sábanas, almohada, toallas, ventilador, desayuno y Wi-Fi.",
       roomBDesc: "Habitación cómoda para tríos, con colchón densidad 35, sábanas, almohada, toallas, ventilador, desayuno y Wi-Fi.",
       roomCDesc: "Alojamiento flexible para grupos pequeños, con colchón densidad 35, sábanas, almohada, toallas, ventilador, desayuno y Wi-Fi.",
-      badgeA: "2 PERSONAS",
-      badgeB: "3 PERSONAS",
-      badgeC: "4 PERSONAS",
+      badgeA: "HABITACIÓN 1",
+      badgeB: "HABITACIÓN 2",
+      badgeC: "HABITACIÓN 3",
       amenityBeds: "Capacidad correcta",
       amenityLocker: "Locker",
       amenityFan: "Ventilador",
@@ -404,10 +404,10 @@ const translationOverrides = {
     pricing: {
       label: "TARIFARIO 2026",
       text: "Precios en Reales Brasileños (BRL). Valores sujetos a disponibilidad y confirmación por WhatsApp.",
-      homeSub: "9 camas · habitaciones para 2, 3 y 4 personas · Desde R$ 150/noche",
-      roomA: "Habitación para 2 personas",
-      roomB: "Habitación para 3 personas",
-      roomC: "Habitación para 4 personas",
+      homeSub: "9 camas · Habitación 1, Habitación 2 y Habitación 3 · R$ 150 por persona/noche",
+      roomA: "Habitación 1",
+      roomB: "Habitación 2",
+      roomC: "Habitación 3",
       roomDetail: "Colchón densidad 35 · Sábanas · Almohada · Toallas · Ventilador · Desayuno · Wi-Fi",
       packStay: "Pack 7 noches",
       kiteSub: "Clases de Kite · Wing Foil · Rental",
@@ -426,7 +426,7 @@ const translationOverrides = {
       roomsMessage: "Hola, quiero consultar disponibilidad para una habitación en Wind Life Home."
     },
     miniBar: {
-      fromHtml: "Desde <strong>R$ 150/noche</strong>",
+      fromHtml: "Desde <strong>R$ 150 por persona/noche</strong>",
       bedsHtml: "Solo <strong>9 camas disponibles</strong>"
     }
   },
@@ -442,7 +442,7 @@ const translationOverrides = {
     },
     sections: {
       stayTitle: "Quartos e acomodações",
-      stayText: "Escolha entre quartos para 2, 3 ou 4 pessoas, todos com café da manhã, Wi-Fi e localização perto do kite point.",
+      stayText: "Escolha entre Quarto 1, Quarto 2 e Quarto 3, todos com café da manhã, Wi-Fi e localização perto do kite point.",
       kiteTitle: "Aulas de Kite & Wing Foil",
       kiteText: "Aulas de kitesurf e wing foil com instrutores certificados, equipamentos cuidados e ótimas condições na Ilha do Guajiru."
     },
@@ -478,15 +478,15 @@ const translationOverrides = {
       }
     },
     rooms: {
-      roomA: "Quarto para 2 pessoas",
-      roomB: "Quarto para 3 pessoas",
-      roomC: "Quarto para 4 pessoas",
+      roomA: "Quarto 1",
+      roomB: "Quarto 2",
+      roomC: "Quarto 3",
       roomADesc: "Espaço íntimo para casais ou amigos, com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.",
       roomBDesc: "Quarto confortável para trios, com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.",
       roomCDesc: "Acomodação flexível para pequenos grupos, com colchão densidade 35, lençóis, travesseiro, toalhas, ventilador, café da manhã e Wi-Fi.",
-      badgeA: "2 PESSOAS",
-      badgeB: "3 PESSOAS",
-      badgeC: "4 PESSOAS",
+      badgeA: "QUARTO 1",
+      badgeB: "QUARTO 2",
+      badgeC: "QUARTO 3",
       amenityBeds: "Capacidade correta",
       amenitySharedBath: "Banheiro",
       amenitySpot: "Perto do kite point"
@@ -494,10 +494,10 @@ const translationOverrides = {
     pricing: {
       label: "TARIFÁRIO 2026",
       text: "Preços em Reais Brasileiros (BRL). Valores sujeitos à disponibilidade e confirmação por WhatsApp.",
-      homeSub: "9 camas · quartos para 2, 3 e 4 pessoas · Desde R$ 150/noite",
-      roomA: "Quarto para 2 pessoas",
-      roomB: "Quarto para 3 pessoas",
-      roomC: "Quarto para 4 pessoas",
+      homeSub: "9 camas · Quarto 1, Quarto 2 e Quarto 3 · R$ 150 por pessoa/noite",
+      roomA: "Quarto 1",
+      roomB: "Quarto 2",
+      roomC: "Quarto 3",
       roomDetail: "Colchão densidade 35 · Lençóis · Travesseiro · Toalhas · Ventilador · Café da manhã · Wi-Fi",
       privateClass: "Aula de Kite (1 hora)",
       beginnerCourse: "Pacote Kite (10 horas)",
@@ -525,7 +525,7 @@ const translationOverrides = {
     },
     sections: {
       stayTitle: "Rooms and accommodation",
-      stayText: "Choose between rooms for 2, 3 or 4 people, all with breakfast, Wi-Fi and a location close to the kite point.",
+      stayText: "Choose between Room 1, Room 2 and Room 3, all with breakfast, Wi-Fi and a location close to the kite point.",
       kiteTitle: "Kite & Wing Foil Classes",
       kiteText: "Kitesurf and wing foil lessons with certified instructors, well-kept gear and excellent conditions in Ilha do Guajiru."
     },
@@ -561,15 +561,15 @@ const translationOverrides = {
       }
     },
     rooms: {
-      roomA: "Room for 2 people",
-      roomB: "Room for 3 people",
-      roomC: "Room for 4 people",
+      roomA: "Room 1",
+      roomB: "Room 2",
+      roomC: "Room 3",
       roomADesc: "An intimate space for couples or friends, with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.",
       roomBDesc: "A comfortable room for trios, with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.",
       roomCDesc: "Flexible accommodation for small groups, with density 35 mattress, sheets, pillow, towels, fan, breakfast and Wi-Fi.",
-      badgeA: "2 PEOPLE",
-      badgeB: "3 PEOPLE",
-      badgeC: "4 PEOPLE",
+      badgeA: "ROOM 1",
+      badgeB: "ROOM 2",
+      badgeC: "ROOM 3",
       amenityBeds: "Correct capacity",
       amenitySharedBath: "Bathroom",
       amenitySpot: "Near the kite point"
@@ -577,10 +577,10 @@ const translationOverrides = {
     pricing: {
       label: "2026 RATES",
       text: "Prices in Brazilian Reais (BRL). Values subject to availability and WhatsApp confirmation.",
-      homeSub: "9 beds · rooms for 2, 3 and 4 people · From R$ 150/night",
-      roomA: "Room for 2 people",
-      roomB: "Room for 3 people",
-      roomC: "Room for 4 people",
+      homeSub: "9 beds · Room 1, Room 2 and Room 3 · R$ 150 per person/night",
+      roomA: "Room 1",
+      roomB: "Room 2",
+      roomC: "Room 3",
       roomDetail: "Density 35 mattress · Sheets · Pillow · Towels · Fan · Breakfast · Wi-Fi",
       privateClass: "Kite class (1 hour)",
       beginnerCourse: "Kite package (10 hours)",
@@ -840,7 +840,7 @@ function setupInteractions() {
 
   const nightsMin = 1;
   const nightsMax = 30;
-  const stayNightPriceValue = 150; // R$/noite
+  const stayNightPriceValue = 150;
 
   const nightsMinusBtn = document.querySelector("[data-nights-minus]");
   const nightsPlusBtn = document.querySelector("[data-nights-plus]");
@@ -940,7 +940,7 @@ function setupInteractions() {
         const perNight = stayNightPriceValue;
         const totalText = `R$${total.toLocaleString("pt-BR")}`;
         const nightsText = `${nights} ${nights === 1 ? "noite" : "noites"}`;
-        const perNightText = `R$ ${perNight} por noite`;
+        const perNightText = `R$ ${perNight} ${t("booking.perNight")}`;
 
         const existingTotal = el.querySelector("[data-total-estadia] ");
         if (existingTotal) {
@@ -967,7 +967,7 @@ function setupInteractions() {
     // Also keep any legacy UI nodes if present.
     const totalEl = document.querySelector("[data-total-estadia] ");
     const perNightEl = document.querySelector("[data-per-night]");
-    if (perNightEl) perNightEl.textContent = `R$ ${stayNightPriceValue} por noite`;
+    if (perNightEl) perNightEl.textContent = `R$ ${stayNightPriceValue} ${t("booking.perNight")}`;
     if (totalEl) totalEl.textContent = `Total: R$ ${total}`;
   }
 
@@ -1387,41 +1387,23 @@ const galleryPhotos = {
     "assets/img/taller shop/WhatsApp Image 2026-06-23 at 15.50.20 (3).jpeg"
   ],
   baths: [
+    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26.jpeg",
+    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26 (1).jpeg",
+    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26 (2).jpeg",
     "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18.jpeg",
     "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18 (1).jpeg",
     "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.18 (2).jpeg",
-    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg",
-    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26.jpeg",
-    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26 (1).jpeg",
-    "assets/img/Baño pasillo compartido/WhatsApp Image 2026-06-23 at 14.19.26 (2).jpeg"
+    "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg"
   ]
 };
 
 const roomData = [
   {
-    id: "room-2",
+    id: "room-1",
     capacity: 2,
     titleKey: "rooms.roomA",
     descKey: "rooms.roomADesc",
     badgeKey: "rooms.badgeA",
-    price: stayNightPrice,
-    cover: "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
-    photos: [
-      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
-      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25.jpeg",
-      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (1).jpeg",
-      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (2).jpeg",
-      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (3).jpeg",
-      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (4).jpeg"
-    ],
-    amenities: ["Colchón D35", "Sábanas", "Almohada", "Toallas", "Ventilador", "Desayuno", "Wi-Fi"]
-  },
-  {
-    id: "room-3",
-    capacity: 3,
-    titleKey: "rooms.roomB",
-    descKey: "rooms.roomBDesc",
-    badgeKey: "rooms.badgeB",
     price: stayNightPrice,
     cover: "assets/img/quartos/quarto-numero-1/WhatsApp Image 2026-06-23 at 14.19.26.jpeg",
     photos: [
@@ -1435,20 +1417,39 @@ const roomData = [
     amenities: ["Colchón D35", "Sábanas", "Almohada", "Toallas", "Ventilador", "Desayuno", "Wi-Fi"]
   },
   {
-    id: "room-4",
+    id: "room-2",
+    capacity: 3,
+    titleKey: "rooms.roomB",
+    descKey: "rooms.roomBDesc",
+    badgeKey: "rooms.badgeB",
+    price: stayNightPrice,
+    cover: "assets/img/foto nova toalha.jpeg",
+    photos: [
+      "assets/img/foto nova toalha.jpeg",
+      "assets/img/quarto 2/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
+      "assets/img/quarto 2/WhatsApp Image 2026-06-23 at 14.19.24 (1).jpeg",
+      "assets/img/quarto 2/WhatsApp Image 2026-06-23 at 14.19.24 (2).jpeg",
+      "assets/img/quarto 2/WhatsApp Image 2026-06-23 at 14.19.24 (3).jpeg",
+      "assets/img/quarto 2/WhatsApp Image 2026-06-23 at 14.19.24 (4).jpeg",
+      "assets/img/quarto 2/WhatsApp Image 2026-06-23 at 14.19.24 (5).jpeg"
+    ],
+    amenities: ["Colchón D35", "Sábanas", "Almohada", "Toallas", "Ventilador", "Desayuno", "Wi-Fi"]
+  },
+  {
+    id: "room-3",
     capacity: 4,
     titleKey: "rooms.roomC",
     descKey: "rooms.roomCDesc",
     badgeKey: "rooms.badgeC",
     price: stayNightPrice,
-    cover: "assets/img/foto nova toalha.jpeg",
+    cover: "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
     photos: [
-      "assets/img/foto nova toalha.jpeg",
-      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
-      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (3).jpeg",
-      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (4).jpeg",
-      "assets/img/Habitación mumero 2 con baño 🛀 en suit .. si podes poner ropa sábanas blancas col la la/WhatsApp Image 2026-06-23 at 14.19.24 (5).jpeg",
-      "assets/img/[Baños de la habitación en suit/WhatsApp Image 2026-06-23 at 15.50.19.jpeg"
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.24.jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25.jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (1).jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (2).jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (3).jpeg",
+      "assets/img/quarto 3/WhatsApp Image 2026-06-23 at 14.19.25 (4).jpeg"
     ],
     amenities: ["Colchón D35", "Sábanas", "Almohada", "Toallas", "Ventilador", "Desayuno", "Wi-Fi"]
   }
@@ -1674,7 +1675,7 @@ function initRoomsModal() {
   if (!overlay || !modal || !close || !body || modal.dataset.ready === "true") return;
   modal.dataset.ready = "true";
 
-  function renderCards(selectedId = "room-2") {
+  function renderCards(selectedId = "room-1") {
     const lang = currentLang();
     if (kicker) kicker.textContent = lang === "pt" ? "Quartos" : lang === "en" ? "Rooms" : "Habitaciones";
     if (title) title.textContent = lang === "pt" ? "Quartos e acomodações" : lang === "en" ? "Rooms and accommodation" : "Habitaciones y alojamientos";
@@ -1694,7 +1695,7 @@ function initRoomsModal() {
             <span>${t("buttons.viewGallery")}</span>
           </button>
           <div class="quarto-card__body">
-            <div class="quarto-card__eyebrow">${room.capacity} ${lang === "en" ? "people" : "personas"}</div>
+            <div class="quarto-card__eyebrow">${t(room.badgeKey)}</div>
             <h3>${t(room.titleKey)}</h3>
             <p>${t(room.descKey)}</p>
             <div class="quarto-card__tags">${room.amenities.map((item) => `<span>${item}</span>`).join("")}</div>
